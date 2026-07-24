@@ -15,6 +15,7 @@
       "!.ralph",
       "!next-env.d.ts",
       "!data",
+      "!public",
       "!coverage",
       "!src/app/globals.css"
     ]
