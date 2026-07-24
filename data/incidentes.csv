@@ -1,0 +1,13 @@
+id,titulo,severity,state,created,closed,deploy_tag,mttr_dias
+390722001,Menu mobile quebrado apos deploy,1,Closed,2026-06-01,2026-06-01,Deploy 01-06-2026,0
+390722002,"Formatacao, campos trocados no cadastro",2,Closed,2026-06-01,2026-06-01,Deploy 01-06-2026,0
+394210001,SEO structured data ausente,2,Closed,2026-06-23,2026-06-24,Deploy 23-06-2026,1
+395747001,Carousel color scheme incorreto,1,Closed,2026-07-06,2026-07-16,Deploy 06-07-2026,10
+383001001,"iframe travando, sessao perdida em producao",1,Closed,2026-02-01,2026-03-07,Deploy 07-03-2026,34
+384001001,Regressao de CLS na home,2,Closed,2026-05-10,2026-05-23,Deploy 23-05-2026,13
+395747002,CardGallery hover sem transicao,3,Closed,2026-07-06,2026-07-10,Deploy 06-07-2026,4
+390722003,TabGroup com foco preso no teclado,3,Closed,2026-06-05,2026-06-19,Deploy 19-06-2026,14
+394210002,Navegue por com ordenacao errada,4,Closed,2026-06-23,2026-07-07,Deploy 07-07-2026,14
+390814,Incidente aberto aguardando priorizacao,1,Committed,2026-05-01,,,
+395697,"CKEditor, conteudo perdido ao salvar",2,Waiting GM,2026-06-20,,,
+396085,Falha intermitente em busca de unidades,3,QA,2026-06-25,,,
