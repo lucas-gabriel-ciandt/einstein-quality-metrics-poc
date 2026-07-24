@@ -1,0 +1,141 @@
+[
+  {
+    "id": 390722001,
+    "fields": {
+      "System.Title": "Menu mobile quebrado apos deploy",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-01T08:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T20:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "System.Tags": "Front End (Bug); Deploy 01-06-2026; QA"
+    }
+  },
+  {
+    "id": 390722002,
+    "fields": {
+      "System.Title": "Formatacao, campos trocados no cadastro",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-01T09:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T22:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "System.Tags": "Deploy 01-06-2026"
+    }
+  },
+  {
+    "id": 394210001,
+    "fields": {
+      "System.Title": "SEO structured data ausente",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-23T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "System.Tags": "Deploy 23-06-2026"
+    }
+  },
+  {
+    "id": 395747001,
+    "fields": {
+      "System.Title": "Carousel color scheme incorreto",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-06T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-16T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "System.Tags": "Deploy 06-07-2026"
+    }
+  },
+  {
+    "id": 383001001,
+    "fields": {
+      "System.Title": "iframe travando, sessao perdida em producao",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-02-01T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-07T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "System.Tags": "Deploy 07-03-2026"
+    }
+  },
+  {
+    "id": 384001001,
+    "fields": {
+      "System.Title": "Regressao de CLS na home",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-05-10T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-23T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "System.Tags": "Deploy 23-05-2026"
+    }
+  },
+  {
+    "id": 395747002,
+    "fields": {
+      "System.Title": "CardGallery hover sem transicao",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-06T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-10T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "System.Tags": "Deploy 06-07-2026"
+    }
+  },
+  {
+    "id": 390722003,
+    "fields": {
+      "System.Title": "TabGroup com foco preso no teclado",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-05T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-19T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "System.Tags": "Deploy 19-06-2026"
+    }
+  },
+  {
+    "id": 394210002,
+    "fields": {
+      "System.Title": "Navegue por com ordenacao errada",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-23T10:00:00Z",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "System.Tags": "Deploy 07-07-2026"
+    }
+  },
+  {
+    "id": 390814,
+    "fields": {
+      "System.Title": "Incidente aberto aguardando priorizacao",
+      "System.WorkItemType": "Incident",
+      "System.State": "Committed",
+      "System.CreatedDate": "2026-05-01T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "System.Tags": "MANUTENCAO"
+    }
+  },
+  {
+    "id": 395697,
+    "fields": {
+      "System.Title": "CKEditor, conteudo perdido ao salvar",
+      "System.WorkItemType": "Incident",
+      "System.State": "Waiting GM",
+      "System.CreatedDate": "2026-06-20T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High"
+    }
+  },
+  {
+    "id": 396085,
+    "fields": {
+      "System.Title": "Falha intermitente em busca de unidades",
+      "System.WorkItemType": "Incident",
+      "System.State": "QA",
+      "System.CreatedDate": "2026-06-25T10:00:00Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium"
+    }
+  }
+]

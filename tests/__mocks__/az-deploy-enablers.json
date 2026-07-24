@@ -1,0 +1,52 @@
+[
+  {
+    "id": 395747,
+    "fields": {
+      "System.Title": "[Portal] Deploy 06-07-2026",
+      "System.WorkItemType": "Enabler",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-06T09:00:00Z",
+      "System.Tags": "deploy-portal"
+    }
+  },
+  {
+    "id": 390722,
+    "fields": {
+      "System.Title": "[Portal] Deploy 01-06-2026",
+      "System.WorkItemType": "Enabler",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-01T09:00:00Z",
+      "System.Tags": "MANUTENCAO; deploy-portal"
+    }
+  },
+  {
+    "id": 398412,
+    "fields": {
+      "System.Title": "[Portal] Deploy 27-07-2026",
+      "System.WorkItemType": "Enabler",
+      "System.State": "Active",
+      "System.CreatedDate": "2026-07-27T09:00:00Z",
+      "System.Tags": "deploy-portal"
+    }
+  },
+  {
+    "id": 394210,
+    "fields": {
+      "System.Title": "[Portal] Deploy 23-06-2026",
+      "System.WorkItemType": "Enabler",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-23T09:00:00Z",
+      "System.Tags": "deploy-portal"
+    }
+  },
+  {
+    "id": 397800,
+    "fields": {
+      "System.Title": "[Portal] Deploy 21-07-2026",
+      "System.WorkItemType": "Enabler",
+      "System.State": "Active",
+      "System.CreatedDate": "2026-07-21T09:00:00Z",
+      "System.Tags": "deploy-portal"
+    }
+  }
+]

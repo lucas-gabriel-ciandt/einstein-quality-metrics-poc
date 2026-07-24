@@ -1,0 +1,145 @@
+[
+  {
+    "id": 500016,
+    "fields": {
+      "System.Title": "Incidente anterior ao primeiro deploy",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-05-15T10:00:00Z"
+    }
+  },
+  {
+    "id": 500001,
+    "fields": {
+      "System.Title": "Menu mobile quebrado apos deploy",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-01T10:00:00Z"
+    }
+  },
+  {
+    "id": 500002,
+    "fields": {
+      "System.Title": "iframe travando na home",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-05T10:00:00Z"
+    }
+  },
+  {
+    "id": 500003,
+    "fields": {
+      "System.Title": "Ajuste de layout no cadastro",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-02T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "2 - Teste Produto Fábrica de Teste"
+    }
+  },
+  {
+    "id": 500004,
+    "fields": {
+      "System.Title": "Validação de formulário",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-10T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "4 - Teste de Liberação"
+    }
+  },
+  {
+    "id": 500005,
+    "fields": {
+      "System.Title": "SEO structured data ausente",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-23T10:00:00Z"
+    }
+  },
+  {
+    "id": 500006,
+    "fields": {
+      "System.Title": "Ordenação incorreta em Navegue por",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-06-25T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "3 - Teste Integrado"
+    }
+  },
+  {
+    "id": 500007,
+    "fields": {
+      "System.Title": "Contraste insuficiente em botão",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-01T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto Funcional"
+    }
+  },
+  {
+    "id": 500009,
+    "fields": {
+      "System.Title": "Carousel color scheme incorreto",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-06T10:00:00Z"
+    }
+  },
+  {
+    "id": 500010,
+    "fields": {
+      "System.Title": "Regressao de CLS na home",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-08T10:00:00Z"
+    }
+  },
+  {
+    "id": 500011,
+    "fields": {
+      "System.Title": "CardGallery sem transição no hover",
+      "System.WorkItemType": "Incident",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-10T10:00:00Z"
+    }
+  },
+  {
+    "id": 500012,
+    "fields": {
+      "System.Title": "Espaçamento do rodapé",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-07T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "2 - Teste Produto Fábrica de Teste"
+    }
+  },
+  {
+    "id": 500013,
+    "fields": {
+      "System.Title": "Bug com momento 6 (furo de convenção)",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-09T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live"
+    }
+  },
+  {
+    "id": 500014,
+    "fields": {
+      "System.Title": "Alinhamento de ícones",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-22T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "3 - Teste Integrado"
+    }
+  },
+  {
+    "id": 500015,
+    "fields": {
+      "System.Title": "Outro bug com momento 6 sem incidente na janela",
+      "System.WorkItemType": "Bug",
+      "System.State": "Closed",
+      "System.CreatedDate": "2026-07-23T10:00:00Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live"
+    }
+  }
+]
