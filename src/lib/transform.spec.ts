@@ -143,12 +143,12 @@ describe('toFinding', () => {
 
 describe('scope funnel', () => {
   it('keeps only findings assigned to a front dev and counts the unassigned pile', () => {
-    expect(rawBoardFindings).toHaveLength(101);
+    expect(rawBoardFindings).toHaveLength(100);
     expect(rawFindings).toHaveLength(67);
     const unassigned = rawBoardFindings.filter(
       (item) => assignedTo(item) === '',
     );
-    expect(unassigned).toHaveLength(8);
+    expect(unassigned).toHaveLength(7);
   });
 });
 
@@ -237,8 +237,8 @@ describe('buildDeploys', () => {
   it('window-attributes findings and counts pre findings as bugsAntes', () => {
     const map = byEnablerId(deploys);
     expect(map.get('390722')?.bugsAntes).toBe(4);
-    expect(map.get('394210')?.bugsAntes).toBe(4);
-    expect(map.get('395747')?.bugsAntes).toBe(0);
+    expect(map.get('394210')?.bugsAntes).toBe(5);
+    expect(map.get('395747')?.bugsAntes).toBe(2);
     expect(map.get('397800')?.bugsAntes).toBe(3);
     expect(map.get('398412')?.bugsAntes).toBe(0);
   });
@@ -246,8 +246,8 @@ describe('buildDeploys', () => {
   it('counts post findings (incidents and momento-6 bugs) as incidentesPos', () => {
     const map = byEnablerId(deploys);
     expect(map.get('390722')?.incidentesPos).toBe(6);
-    expect(map.get('394210')?.incidentesPos).toBe(3);
-    expect(map.get('395747')?.incidentesPos).toBe(6);
+    expect(map.get('394210')?.incidentesPos).toBe(2);
+    expect(map.get('395747')?.incidentesPos).toBe(4);
     expect(map.get('397800')?.incidentesPos).toBe(0);
     expect(map.get('398412')?.incidentesPos).toBe(0);
   });
@@ -255,8 +255,8 @@ describe('buildDeploys', () => {
   it('derives dre as pre/(pre+post) rounded to 4 decimals, null when empty', () => {
     const map = byEnablerId(deploys);
     expect(map.get('390722')?.dre).toBe(0.4);
-    expect(map.get('394210')?.dre).toBe(0.5714);
-    expect(map.get('395747')?.dre).toBe(0);
+    expect(map.get('394210')?.dre).toBe(0.7143);
+    expect(map.get('395747')?.dre).toBe(0.3333);
     expect(map.get('397800')?.dre).toBe(1);
     expect(map.get('398412')?.dre).toBeNull();
   });

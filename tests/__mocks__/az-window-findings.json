@@ -1090,18 +1090,6 @@
     }
   },
   {
-    "id": 394083,
-    "fields": {
-      "System.Title": "Os estilos no CK Editor não estão sendo aplicados",
-      "System.WorkItemType": "Bug",
-      "System.State": "New",
-      "System.CreatedDate": "2026-06-18T18:34:33.027Z",
-      "System.Tags": "Front End (Bug); MANUTENCAO",
-      "Microsoft.VSTS.Common.Severity": "3 - Medium",
-      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
-    }
-  },
-  {
     "id": 394108,
     "fields": {
       "System.Title": "Alinhamento horizontal no CKEditor",
@@ -1311,7 +1299,7 @@
       "System.CreatedDate": "2026-06-29T14:40:39.597Z",
       "Microsoft.VSTS.Common.Severity": "2 - High",
       "Microsoft.VSTS.Common.ClosedDate": "2026-06-30T17:28:04.777Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
       }
@@ -1401,7 +1389,7 @@
       "System.CreatedDate": "2026-07-06T14:38:49.74Z",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
       "Microsoft.VSTS.Common.ClosedDate": "2026-07-06T14:49:23.32Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
       }
@@ -1432,7 +1420,7 @@
       "System.Tags": "Deploy 06-07-2026",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
       "Microsoft.VSTS.Common.ClosedDate": "2026-07-06T19:36:28.147Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
       }
@@ -1457,9 +1445,10 @@
     "fields": {
       "System.Title": "Banner imagem sobreposta",
       "System.WorkItemType": "Bug",
-      "System.State": "Resolved",
+      "System.State": "Done",
       "System.CreatedDate": "2026-07-22T13:22:57.033Z",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-27T11:39:19.85Z",
       "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
@@ -1471,9 +1460,10 @@
     "fields": {
       "System.Title": "UnitsEvolutionCarousel:  altura inconsistente entre cards no desktop",
       "System.WorkItemType": "Bug",
-      "System.State": "Resolved",
+      "System.State": "Done",
       "System.CreatedDate": "2026-07-22T14:41:33.633Z",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-27T11:39:27.39Z",
       "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"

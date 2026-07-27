@@ -92,7 +92,7 @@ logged-in `az` CLI — it is not part of the automated test loop.
    - **5** `deploy-portal` Enablers: 390722 (01/06), 394210 (23/06),
      395747 (06/07), 397800 (21/07), 398412 (27/07).
    - **35** Incidents at the `NOVO_EINSTEIN_BR` root (2026); **27** survive the
-     front-dev funnel (`team.yml`), **8** land in the `nao-classificado` pile.
+     front-dev funnel (`team.yml`), **7** land in the `nao-classificado` pile.
    - **CFR 3/4** over the Jun-Jul closed windows: front Incidents per window are
      390722 (6), 394210 (1), 395747 (3), 397800 (0), 398412 (0).
    - MTTR "Crítico e Alto" (n=6): 0, 0, 1, 10, 13, 34 days.

@@ -551,14 +551,17 @@ never been created), and the CSVs hold the extracted numbers.
 
 What moved, patients-front scope, 2026:
 
-| Deploy | DRE seeded (invented) | DRE real |
-|--------|----------------------|----------|
-| 390722 | 0.6667 | 0.4 |
-| 394210 | 0.8889 | 0.5714 |
-| 395747 | 0.7692 | 0.0 |
-| 397800 | 1.0 | 1.0 |
+| Deploy | DRE seeded (invented) | DRE 1a extracao | DRE apos correcao de momento |
+|--------|----------------------|-----------------|------------------------------|
+| 390722 | 0.6667 | 0.4 | 0.4 |
+| 394210 | 0.8889 | 0.5714 | 0.7143 |
+| 395747 | 0.7692 | 0.0 | 0.3333 |
+| 397800 | 1.0 | 1.0 | 1.0 |
 
-The invented seed flattered DRE in every window. CFR, MTTR "Crítico e Alto"
+The invented seed flattered DRE in every window. The third column is the
+2026-07-27 re-extraction after the dev corrected `momento` on 394833, 395759 and
+395836 (all Bugs mislabelled `6 - Pos Go Live`), which is the `furo-convencao`
+case the hybrid rule exists to surface. CFR, MTTR "Crítico e Alto"
 (0, 0, 1, 10, 13, 34) and the three open Incidents all reproduce the answer key
 exactly. MTTR "Médio e Baixo" is n=18 with median 9d against the ~14d the manual
 mining estimated.

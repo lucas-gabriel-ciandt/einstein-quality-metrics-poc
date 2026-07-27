@@ -1,6 +1,6 @@
 enabler_id,data,titulo,bugs_antes,incidentes_pos,dre,causou_incidente,false_alarms
 390722,2026-06-01,[Portal] Deploy - 01/06/2026,4,6,0.4,1,
-394210,2026-06-23,[Portal] Deploy - 23/06/2026,4,3,0.5714,1,
-395747,2026-07-06,[Portal] Deploy -06/07/2026,0,6,0,1,
+394210,2026-06-23,[Portal] Deploy - 23/06/2026,5,2,0.7143,1,
+395747,2026-07-06,[Portal] Deploy -06/07/2026,2,4,0.3333,1,
 397800,2026-07-21,[Portal] Deploy 21-07-2026,3,0,1,0,
 398412,2026-07-27,[Portal] Deploy 27-07-2026,0,0,,0,12
