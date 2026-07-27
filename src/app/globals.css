@@ -12,6 +12,8 @@
   --color-metric-cfr: #d64550;
   --color-metric-mttr: #2f9e6b;
   --color-metric-false-alarm: #d98a2b;
+  --color-severity-alta: #c62828;
+  --color-severity-baixa: #8a94a3;
 
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }

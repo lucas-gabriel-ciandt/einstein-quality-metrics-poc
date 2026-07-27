@@ -186,6 +186,18 @@ describe('computeMttrSeries', () => {
     expect(byId.get('B')?.severity).toBe(2);
   });
 
+  // The chart plots both bands against the closure date. Without it the two
+  // series can only be indexed positionally, which pairs unrelated incidents
+  // and truncates the shorter band partway across the x axis.
+  it('carries the closure date on each closed point so both bands share a real x axis', () => {
+    const { sev12, sev34 } = computeMttrSeries(incidents, '2026-07-01');
+    for (const point of [...sev12, ...sev34]) {
+      expect(point.closed).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+    const byId = new Map(sev12.map((p) => [p.id, p]));
+    expect(byId.get('B')?.closed).toBe('2026-06-11');
+  });
+
   it('groups closed severity 3-4 incidents into sev34 with mttrDias = closed - created', () => {
     const { sev34 } = computeMttrSeries(incidents, '2026-07-01');
     expect(sev34.map((p) => p.id).sort()).toEqual(['C', 'D']);

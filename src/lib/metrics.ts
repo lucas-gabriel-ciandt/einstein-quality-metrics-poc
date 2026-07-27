@@ -63,6 +63,8 @@ export interface MttrClosedPoint {
   id: string;
   severity: Severity;
   mttrDias: number;
+  /** Closure date (YYYY-MM-DD): the real x position of the point. */
+  closed: string;
 }
 
 export interface MttrOpenPoint {
@@ -95,6 +97,7 @@ export function computeMttrSeries(
       id: incident.id,
       severity: incident.severity,
       mttrDias: daysBetween(incident.created, incident.closed),
+      closed: incident.closed,
     };
     if (incident.severity <= 2) {
       series.sev12.push(point);

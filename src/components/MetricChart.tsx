@@ -6,6 +6,7 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
+  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -111,12 +112,19 @@ function MttrChart({
   accent: string;
 }) {
   const series = computeMttrSeries(incidents, asOf);
-  const length = Math.max(series.sev12.length, series.sev34.length);
-  const data = Array.from({ length }, (_, index) => ({
-    label: `#${index + 1}`,
-    sev12: series.sev12[index]?.mttrDias ?? null,
-    sev34: series.sev34[index]?.mttrDias ?? null,
-  }));
+  // Both bands share one real x axis: the closure date. Indexing the two series
+  // positionally instead would pair unrelated incidents and cut the shorter
+  // band off partway across the chart.
+  const data = [
+    ...series.sev12.map((point) => ({ point, band: 'sev12' as const })),
+    ...series.sev34.map((point) => ({ point, band: 'sev34' as const })),
+  ]
+    .sort((a, b) => a.point.closed.localeCompare(b.point.closed))
+    .map(({ point, band }) => ({
+      label: shortDate(point.closed),
+      sev12: band === 'sev12' ? point.mttrDias : null,
+      sev34: band === 'sev34' ? point.mttrDias : null,
+    }));
   return (
     <ResponsiveContainer
       height="100%"
@@ -127,21 +135,26 @@ function MttrChart({
           strokeDasharray="3 3"
           stroke="var(--color-neutral-300)"
         />
-        <XAxis dataKey="label" />
+        <XAxis
+          dataKey="label"
+          minTickGap={24}
+        />
         <YAxis unit="d" />
         <Tooltip />
+        <Legend />
         <Line
           connectNulls
           dataKey="sev12"
           name="Crítico e Alto"
-          stroke={accent}
+          stroke="var(--color-severity-alta)"
+          strokeWidth={2}
           type="monotone"
         />
         <Line
           connectNulls
           dataKey="sev34"
           name="Médio e Baixo"
-          stroke="var(--color-neutral-600)"
+          stroke="var(--color-severity-baixa)"
           strokeDasharray="4 2"
           type="monotone"
         />
