@@ -1404,7 +1404,7 @@
       "System.CreatedDate": "2026-07-06T16:10:09.1Z",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
       "Microsoft.VSTS.Common.ClosedDate": "2026-07-24T11:53:58.18Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
       }

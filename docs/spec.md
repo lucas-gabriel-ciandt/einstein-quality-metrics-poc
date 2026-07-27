@@ -555,13 +555,36 @@ What moved, patients-front scope, 2026:
 |--------|----------------------|-----------------|------------------------------|
 | 390722 | 0.6667 | 0.4 | 0.4 |
 | 394210 | 0.8889 | 0.5714 | 0.7143 |
-| 395747 | 0.7692 | 0.0 | 0.3333 |
+| 395747 | 0.7692 | 0.0 | 0.5 |
 | 397800 | 1.0 | 1.0 | 1.0 |
 
 The invented seed flattered DRE in every window. The third column is the
-2026-07-27 re-extraction after the dev corrected `momento` on 394833, 395759 and
-395836 (all Bugs mislabelled `6 - Pos Go Live`), which is the `furo-convencao`
-case the hybrid rule exists to surface. CFR, MTTR "Crítico e Alto"
+2026-07-27 re-extraction after the dev corrected `momento` on four Bugs
+mislabelled `6 - Pos Go Live` (394833, 395759, 395836 and 395771), which is the
+`furo-convencao` case the hybrid rule exists to surface. Mean DRE over the closed
+windows moves from 0.4929 to 0.6536.
+
+Window 395747 (06/07) tops out at 0.5 and cannot reach 1.0: three Incidents
+(395696, 395697, 396085) are attributed to it, and an Incident is post-production
+by definition regardless of its momento.
+
+### P4. Momento correction exposes a contradiction in the window attribution
+
+**Open, not resolved.** Ordering the 06/07 window by creation time gives:
+13:06 two Incidents at `6 - Pos Go Live`, then 14:38, 16:10 and 19:00 three Bugs
+now at `0 - Teste na Sprint`. If the deploy had already shipped by 13:06, those
+three bugs were opened after go live and cannot be sprint-testing finds. Both
+readings cannot hold for the same deploy.
+
+The likely resolution is that `momento` is relative to the item's own cycle, not
+to this deploy: "Teste na Sprint" means found while testing the current sprint,
+whose work ships in the **next** deploy. If so, `board-model.md`'s attribution
+rule is inverted for pre-production findings. Today any finding created between
+deploy N and N+1 is attributed to N, which is right for an Incident (a failure of
+the deploy already in production) but wrong for a pre-production Bug, which is a
+defect caught before deploy **N+1**.
+
+Deciding this changes DRE in every window. Not acted on. CFR, MTTR "Crítico e Alto"
 (0, 0, 1, 10, 13, 34) and the three open Incidents all reproduce the answer key
 exactly. MTTR "Médio e Baixo" is n=18 with median 9d against the ~14d the manual
 mining estimated.
