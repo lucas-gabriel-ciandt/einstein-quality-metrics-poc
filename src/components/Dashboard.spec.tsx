@@ -225,8 +225,8 @@ describe('Dashboard chart caption', () => {
   it('shows both MTTR severity series in the caption', () => {
     renderDashboard();
     selectMetric('MTTR');
-    expect(screen.getByText(/Sev 1-2/)).toBeInTheDocument();
-    expect(screen.getByText(/Sev 3-4/)).toBeInTheDocument();
+    expect(screen.getByText(/Crítico e Alto \(média\)/)).toBeInTheDocument();
+    expect(screen.getByText(/Médio e Baixo \(média\)/)).toBeInTheDocument();
   });
 
   it('marks the latest CFR window as partial in the caption', () => {

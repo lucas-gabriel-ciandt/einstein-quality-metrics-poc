@@ -70,11 +70,11 @@ function MttrCaption({
   return (
     <>
       <Tile
-        label="Sev 1-2 (média)"
+        label="Crítico e Alto (média)"
         value={sev12 === null ? '—' : `${sev12.toFixed(1)} d`}
       />
       <Tile
-        label="Sev 3-4 (média)"
+        label="Médio e Baixo (média)"
         value={sev34 === null ? '—' : `${sev34.toFixed(1)} d`}
       />
       <Tile

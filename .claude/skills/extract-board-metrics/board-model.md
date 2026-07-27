@@ -58,9 +58,12 @@ QA opens Bugs for both sides).
   hotfix still counts. The latest window is right-censored (marked partial).
 
 - **MTTR — `ClosedDate - CreatedDate` per Incident**, split into two series by
-  Severity (`Microsoft.VSTS.Common.Severity`): Sev 1-2 (critical restoration)
-  and Sev 3-4 (deploy-cadence fixes). Never a single average. Open Incidents
-  enter as "open for X days" and never disappear.
+  Severity (`Microsoft.VSTS.Common.Severity`). The board values are
+  `1 - Critical`, `2 - High`, `3 - Medium`, `4 - Low`; the two series are
+  "Crítico e Alto" (1-2, critical restoration) and "Médio e Baixo" (3-4,
+  deploy-cadence fixes). Name them by the board label in the UI, never by the
+  numeric code. Never a single average. Open Incidents enter as "open for X
+  days" and never disappear.
 
 - **False Alarm — a single manual per-deploy number** in `false_alarms`,
   written only by the `register-false-alarm` skill. The extraction preserves it.

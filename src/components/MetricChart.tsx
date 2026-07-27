@@ -133,14 +133,14 @@ function MttrChart({
         <Line
           connectNulls
           dataKey="sev12"
-          name="Sev 1-2"
+          name="Crítico e Alto"
           stroke={accent}
           type="monotone"
         />
         <Line
           connectNulls
           dataKey="sev34"
-          name="Sev 3-4"
+          name="Médio e Baixo"
           stroke="var(--color-neutral-600)"
           strokeDasharray="4 2"
           type="monotone"

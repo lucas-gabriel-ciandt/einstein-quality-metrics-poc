@@ -30,7 +30,7 @@ export const METRICS: MetricMeta[] = [
     label: 'MTTR',
     title: 'MTTR — Tempo Médio de Reparo',
     description:
-      'O MTTR é a diferença entre a data de fechamento e a de criação de cada Incidente, em dias. A série é dividida em duas faixas de severidade — as mais críticas (1 e 2) e as menores (3 e 4) — porque elas têm expectativas de resposta diferentes. Incidentes ainda abertos são preservados como "aberto há X dias".',
+      'O MTTR é a diferença entre a data de fechamento e a de criação de cada Incidente, em dias. A série é dividida em duas faixas de severidade, "Crítico e Alto" e "Médio e Baixo", porque elas têm expectativas de resposta diferentes. Incidentes ainda abertos são preservados como "aberto há X dias".',
     accent: 'var(--color-metric-mttr)',
   },
   {
