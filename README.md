@@ -22,7 +22,9 @@ computes a metric that is not already in the data layer.
   False Alarm).
 - `data/incidentes.csv` — one row per Incident (raw MTTR, right-censoring).
 - `src/lib/` — the computable data layer: `types.ts`, `csv.ts` (d3-dsv),
-  `metrics.ts` (per-deploy series), `transform.ts` (board JSON -> CSV rows).
+  `metrics.ts` (per-deploy series), `transform.ts` (board JSON -> CSV rows),
+  `data.ts` (build-time CSV read boundary).
+- `team.yml` — the front-dev allowlist that drives filter 2 of the scope funnel.
 - `src/app/`, `src/components/`, `src/content/` — the presentation layer.
 
 ## Commands
@@ -45,8 +47,9 @@ computes a metric that is not already in the data layer.
 - **CFR** — cumulative since the first registered deploy: share of deploys with
   at least one attributed Incident. The latest window is right-censored
   (partial).
-- **MTTR** — `ClosedDate - CreatedDate` per Incident, split Sev 1-2 vs Sev 3-4;
-  open Incidents shown as "open for X days".
+- **MTTR** — `ClosedDate - CreatedDate` per Incident, split into "Crítico e
+  Alto" (Severity 1-2) vs "Médio e Baixo" (Severity 3-4), named by the board
+  label rather than the numeric code; open Incidents shown as "open for X days".
 - **False Alarm** — a single manual per-deploy number, appended via the
   `register-false-alarm` skill.
 
@@ -61,9 +64,14 @@ computes a metric that is not already in the data layer.
 ## Manual seed procedure
 
 The unit tests validate the transform logic (`src/lib/transform.ts`) against
-recorded board fixtures deterministically, in CI. Seeding the real dataset from
-the **live** board is a manual step, run once with a logged-in `az` CLI — it is
-not part of the automated test loop.
+board fixtures deterministically, in CI. The fixtures under `tests/__mocks__/`
+are a real `az boards query` response recorded on **2026-07-27**, slimmed to the
+SELECT columns (`System.AssignedTo` reduced to `displayName`). `az-window-findings.json`
+is the **unfiltered** root response, so the scope funnel runs in the test rather
+than being baked into the recording.
+
+Seeding the dataset from the **live** board is a manual step, run with a
+logged-in `az` CLI — it is not part of the automated test loop.
 
 1. **Log in and check the CLI.**
 
@@ -83,10 +91,14 @@ not part of the automated test loop.
 
    - **5** `deploy-portal` Enablers: 390722 (01/06), 394210 (23/06),
      395747 (06/07), 397800 (21/07), 398412 (27/07).
-   - **35** Incidents at the `NOVO_EINSTEIN_BR` root (2026).
-   - **CFR 3/4** over the Jun-Jul closed windows (390722, 394210, 395747 failed;
-     397800's window open).
-   - MTTR Sev 1-2 (n=6): 0, 0, 1, 10, 13, 34 days; Sev 3-4 (n=18) median ~14d.
+   - **35** Incidents at the `NOVO_EINSTEIN_BR` root (2026); **27** survive the
+     front-dev funnel (`team.yml`), **8** land in the `nao-classificado` pile.
+   - **CFR 3/4** over the Jun-Jul closed windows: front Incidents per window are
+     390722 (6), 394210 (1), 395747 (3), 397800 (0), 398412 (0).
+   - MTTR "Crítico e Alto" (n=6): 0, 0, 1, 10, 13, 34 days.
+   - MTTR "Médio e Baixo" (n=18): median **9d**. The spec's manual mining
+     estimated ~14d; the extraction is the authority and the spec figure was an
+     approximation, not a regression.
    - Open Incidents preserved: 390814, 395697, 396085.
 
    Any divergence is a data-quality signal to investigate on the board, not a

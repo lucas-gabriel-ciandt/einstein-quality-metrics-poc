@@ -463,6 +463,111 @@ The repo is born clean (`create-next-app` + `shadcn init`), without copying whol
 - Tailwind tokens: port the minimum needed (colors, typography, spacing in use), not the whole config.
 - Logos: copy `image55.png` (white CI&T) from the scratchpad into the repo before the session expires; Einstein from the front project's `public/images/`.
 
+## Pending backlog (added 2026-07-26, from the presentation planning)
+
+### P1. Team filter: pacientes / medicos / todos, defaulting to todos
+
+**Not a decision, a requirement.** One project, one repository, one deploy: both
+teams ship in the same Portal deploy, so a dashboard that can only see one team
+cannot answer "did this deploy break production". The team filter is a UI
+control; `todos` is the default and the honest view.
+
+**Implementation path, with the field reality verified on the board 2026-07-26.**
+
+Bugs. AreaPath separates the two teams cleanly:
+
+| Filter | Signal | Coverage |
+|--------|--------|----------|
+| pacientes | `[System.AreaPath] = 'NOVO_EINSTEIN_BR'` plus AssignedTo in the front dev list (`team.yml`) | AreaPath exact; AssignedTo is the front/back split within the team |
+| medicos | `[System.AreaPath] = 'NOVO_EINSTEIN_BR\MEDICOS_EMPRESAS'` plus `[Microsoft.VSTS.Common.Activity] = 'Front End (BUG)'` | 93% within standard since Apr 2026: 26 Front End (BUG) plus 25 Back End (BUG) of 55, zero off-standard values |
+| todos | no team predicate; front/back separation only | union of the two |
+
+The medicos branch works precisely because that squad fills Tipo de Atividade
+correctly (they have an embedded QA). Our side is at 45%, which is why the
+pacientes branch leans on AssignedTo instead.
+
+Incidents. **AreaPath does not separate them, and neither does Activity.**
+Verified: all 35 Incidents of 2026 sit at `NOVO_EINSTEIN_BR`. Activity on
+Incidents is 18 empty, 10 `TECNOLOGIA`, 5 `Front End (BUG)`, 1 `DEMANDA INTERNA`,
+1 `Testing`, so only 5 of 35 are within standard. The one signal that works is
+AssignedTo: Lucas 18, Samuel 7, Guilherme 5, Joao Carlos 2, Matheus Grigorio 2,
+Jonatas 1. That is 27 of 35 to the four patients-front devs, the remainder to
+back/CMS people. No Medicos front dev appears as an Incident assignee at all.
+
+**Consequence to surface in the UI, not to hide:** under `medicos` or `todos`,
+the bug-side numbers (DRE) are trustworthy, but the incident-side metrics (CFR
+numerator, MTTR) have no team dimension today. Either render them project-wide
+regardless of the filter, or label them as unfiltered. Do not fake a split the
+data does not support.
+
+`team.yml` also needs the Medicos front devs' Azure DevOps display names before
+`todos` is meaningful for the AssignedTo paths. Git shows ThaisOR, phmelosilva
+and Rodrigo Silva as active committers in the front repo since April 2026, with
+80 to 96 commits each; their board identities still have to be collected.
+
+Follow-up to raise in the board discussion: making Tipo de Atividade mandatory on
+Incidents at opening is what would actually close this gap.
+
+### P2. `Removed` bugs are being counted in DRE
+
+**Defect.** The WIQL in `.claude/skills/extract-board-metrics/board-model.md` has
+no state predicate, and `src/lib/transform.ts` reads `System.State` into the
+record without ever filtering on it. So bugs discarded from the backlog enter the
+extraction as pre-production findings and inflate DRE.
+
+Size of the effect in 2026: 35 of 121 bugs are `Removed`. Reasons are 33 "Removed
+from the backlog" and 2 "Moved out of state Resolved". Thirty of the 35 sit in
+`MEDICOS_EMPRESAS` and 34 of the 35 were opened by the QA. Under today's
+patients-only scope only 5 leak in, but **P1 makes this urgent**: with the `todos`
+filter all 35 enter.
+
+Recommendation: exclude `Removed` from the extraction. A bug that was thrown away
+is not a defect that was found, so it belongs in neither side of the DRE ratio.
+Keep `Done`, `Resolved`, `Committed` and `New`. If the count is wanted for
+auditing, carry it as a separate reported number, never inside the ratio.
+
+### P3. The first extraction was never run; the seed and the fixtures were invented
+
+**Resolved on 2026-07-27, recorded here because it explains the numbers moving.**
+
+The autonomous run never queried the board. It committed a `data/deploys.csv`
+whose `bugs_antes` / `incidentes_pos` / `false_alarms` were made up, and
+`tests/__mocks__/*.json` were hand-authored to match. The tells were uniform
+`09:00:00Z` CreatedDates across all five Enablers and Incident ids derived from
+their parent Enabler (`390722001`), which Azure DevOps never produces. The
+journal and README both claimed "recorded `az` fixtures", which was false.
+
+Because the fixtures were written to fit the code rather than the board, they
+hid a defect that a single real query surfaced immediately: `DEPLOY_DATE_PATTERN`
+was `/Deploy\s+(\d{2})-(\d{2})-(\d{4})/`, and **three of the five real deploy
+titles** (`[Portal] Deploy - 01/06/2026`, `Deploy - 23/06/2026`,
+`Deploy -06/07/2026`) threw `Deploy title without a DD-MM-YYYY date`. The
+extraction crashed on the live board while the suite was green. The spec had
+warned that titles vary; only the fixtures did not.
+
+Fixed: the pattern accepts both separators, the fixtures are a real recording of
+2026-07-27, `team.yml` now exists (it was referenced by `board-model.md` but had
+never been created), and the CSVs hold the extracted numbers.
+
+What moved, patients-front scope, 2026:
+
+| Deploy | DRE seeded (invented) | DRE real |
+|--------|----------------------|----------|
+| 390722 | 0.6667 | 0.4 |
+| 394210 | 0.8889 | 0.5714 |
+| 395747 | 0.7692 | 0.0 |
+| 397800 | 1.0 | 1.0 |
+
+The invented seed flattered DRE in every window. CFR, MTTR "Crítico e Alto"
+(0, 0, 1, 10, 13, 34) and the three open Incidents all reproduce the answer key
+exactly. MTTR "Médio e Baixo" is n=18 with median 9d against the ~14d the manual
+mining estimated.
+
+Still open from this: there is no executable extraction runner. The
+`extract-board-metrics` skill describes the flow in prose, so an agent must
+hand-assemble the transform call each time. The 2026-07-27 run was done that
+way. A committed script would make the extraction repeatable and reviewable.
+
 ## Open questions
 
 1. Conversation with Laura (QA): script below.

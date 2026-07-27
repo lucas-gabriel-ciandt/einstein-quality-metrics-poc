@@ -1,13 +1,28 @@
 id,titulo,severity,state,created,closed,deploy_tag,mttr_dias
-390722001,Menu mobile quebrado apos deploy,1,Closed,2026-06-01,2026-06-01,Deploy 01-06-2026,0
-390722002,"Formatacao, campos trocados no cadastro",2,Closed,2026-06-01,2026-06-01,Deploy 01-06-2026,0
-394210001,SEO structured data ausente,2,Closed,2026-06-23,2026-06-24,Deploy 23-06-2026,1
-395747001,Carousel color scheme incorreto,1,Closed,2026-07-06,2026-07-16,Deploy 06-07-2026,10
-383001001,"iframe travando, sessao perdida em producao",1,Closed,2026-02-01,2026-03-07,Deploy 07-03-2026,34
-384001001,Regressao de CLS na home,2,Closed,2026-05-10,2026-05-23,Deploy 23-05-2026,13
-395747002,CardGallery hover sem transicao,3,Closed,2026-07-06,2026-07-10,Deploy 06-07-2026,4
-390722003,TabGroup com foco preso no teclado,3,Closed,2026-06-05,2026-06-19,Deploy 19-06-2026,14
-394210002,Navegue por com ordenacao errada,4,Closed,2026-06-23,2026-07-07,Deploy 07-07-2026,14
-390814,Incidente aberto aguardando priorizacao,1,Committed,2026-05-01,,,
-395697,"CKEditor, conteudo perdido ao salvar",2,Waiting GM,2026-06-20,,,
-396085,Falha intermitente em busca de unidades,3,QA,2026-06-25,,,
+380017,[Unidades] Revisão do Filtro de Unidades Publicas,1,Done,2026-02-24,2026-03-30,Deploy 30-03-2026,34
+381025,Correção Microfront Exames,3,Done,2026-03-04,2026-03-04,Deploy 04-03-2026,0
+381091,Estilos Editor de Texto,3,Done,2026-03-04,2026-03-04,Deploy 04-03-2026,0
+381366,Filtros Hospital do Futuro,4,Done,2026-03-09,2026-03-11,,2
+381561,[Unidades] Cache de Conteúdos Relacionados em Páginas Compostas,4,Done,2026-03-09,2026-03-30,Deploy 30-03-2026,21
+381563,Problema ao acessar url com âncora (#),4,Done,2026-03-09,2026-03-30,Deploy 30-03-2026,21
+381726,Correção meta robots noindex,1,Done,2026-03-10,2026-03-10,Deploy 10-03-2026,0
+381755,canonicalUrl ignora valor do CMS,2,Done,2026-03-10,2026-03-11,,1
+383526,Preview em Rotas Localizadas,2,Done,2026-03-27,2026-03-27,,0
+383791,[Portal] Tempo de Espera Unidades,3,Done,2026-03-30,2026-04-09,Deploy 09-04-2026,10
+384454,[Redis] Ignorar Parâmetros de Campanha,3,Done,2026-04-07,2026-04-09,Deploy 09-04-2026,2
+385198,Redirecionamento de URLs traduzidas,3,Done,2026-04-14,2026-04-22,,8
+385785,"[Frontend] Corrigir geração do sitemap que multiplica a home ao tratar slugs com ""home"" como página inicial",3,Done,2026-04-22,2026-05-06,Deploy 06-05-2026,14
+387413,[Portal] Corrigir exibição das setas de navegação do carrossel de serviços,3,Done,2026-05-05,2026-06-01,Deploy 01-06-2026,27
+388739,"Incidente de mensuração GTM no BannerGraphicsLess: CTA sem captura correta de categoria, label e link",3,Done,2026-05-13,2026-05-13,,0
+390613,Correção de Metatags Fora do <head>,2,Done,2026-05-22,2026-06-01,Deploy 01-06-2026,10
+390814,"Botão ""Saiba Mais"" do componente ""Galeria da Informação"" abaixo das setas",4,Committed,2026-05-25,,,
+392544,[Menu] Botões com tamanhos despadronizados em mobile e tablet,4,Done,2026-06-03,2026-06-08,,5
+392655,Erro de formatação | página sobre - estilo do texto perdeu a cor,4,Done,2026-06-05,2026-07-07,Deploy 06-07-2026,32
+393089,"Componente ""Navegue por""",3,Done,2026-06-09,2026-06-24,Deploy 23-06-2026,15
+393324,Iframe | Espaçamento quebrado,3,Done,2026-06-10,2026-06-24,Deploy 23-06-2026,14
+394108,Alinhamento horizontal no CKEditor,4,Done,2026-06-19,2026-06-23,Deploy 23-06-2026,4
+394253,TabGroupComponent quebra layout,3,Done,2026-06-22,2026-07-07,Deploy 06-07-2026,15
+394533,[SEO] Dados estruturados em Páginas de Artigo,2,Done,2026-06-24,2026-07-07,Deploy 06-07-2026,13
+395696,Carrosséis Perderam Color Scheme quando Background é Escuro,3,Done,2026-07-06,2026-07-07,Deploy 06-07-2026,1
+395697,"Regressão CLS: fontes carregadas após o render, fora do next/font",3,Waiting GM,2026-07-06,,,
+396085,"Hover quebrado no componente ""CardGallery""",2,QA,2026-07-07,,,

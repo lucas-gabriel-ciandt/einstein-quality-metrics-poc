@@ -1,145 +1,1508 @@
 [
   {
-    "id": 500016,
+    "id": 372310,
     "fields": {
-      "System.Title": "Incidente anterior ao primeiro deploy",
-      "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-05-15T10:00:00Z"
-    }
-  },
-  {
-    "id": 500001,
-    "fields": {
-      "System.Title": "Menu mobile quebrado apos deploy",
-      "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-01T10:00:00Z"
-    }
-  },
-  {
-    "id": 500002,
-    "fields": {
-      "System.Title": "iframe travando na home",
-      "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-05T10:00:00Z"
-    }
-  },
-  {
-    "id": 500003,
-    "fields": {
-      "System.Title": "Ajuste de layout no cadastro",
+      "System.Title": "[Front] [Wise] Título da pagina completa",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-02T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "2 - Teste Produto Fábrica de Teste"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-02T13:21:29.99Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-13T12:06:42.07Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Jose Ricardo de Oliveira Filho"
+      }
     }
   },
   {
-    "id": 500004,
+    "id": 372314,
     "fields": {
-      "System.Title": "Validação de formulário",
+      "System.Title": "[Front] [Wise] Espaçamentos das paginas",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-10T10:00:00Z",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-02T13:24:23.327Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-07T12:06:52.74Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Edilson Aparecido Rodrigues"
+      }
+    }
+  },
+  {
+    "id": 372316,
+    "fields": {
+      "System.Title": "[CMS] [Wise] Desativar um exame no painel do CMS",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-02T13:27:23.02Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-06T18:54:04.24Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 372317,
+    "fields": {
+      "System.Title": "[CMS] [Wise] Listagem retornando url da pagina simples",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-02T13:28:43.987Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-06T18:53:51.79Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 372319,
+    "fields": {
+      "System.Title": "[CMS] [Wise] Criação de pagina completa, não refletindo na listagem",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-02T13:33:15.313Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-09T20:42:25.263Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 377087,
+    "fields": {
+      "System.Title": "[Pacientes] Manutenção - E-books no Vida Saudável",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-28T11:46:51.497Z",
+      "System.Tags": "CMS; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-05T11:09:45.747Z",
+      "System.AssignedTo": {
+        "displayName": "Jonatas Dutra Raatz"
+      }
+    }
+  },
+  {
+    "id": 377177,
+    "fields": {
+      "System.Title": "Preview",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-28T18:00:57.12Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-03T13:48:06.51Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 377179,
+    "fields": {
+      "System.Title": "404",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-28T18:02:35.81Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-01-30T12:05:07.2Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 377427,
+    "fields": {
+      "System.Title": "Resolver erro de HTML com <a> aninhadas em componentes de Card",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-01-30T18:28:26.323Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-03T17:06:03.63Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Edilson Aparecido Rodrigues"
+      }
+    }
+  },
+  {
+    "id": 377598,
+    "fields": {
+      "System.Title": "perPage Vida Saudável",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-02T14:35:58.317Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-03T20:34:24.737Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 377600,
+    "fields": {
+      "System.Title": "Paginação /unidades",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-02T14:37:42.843Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-05T14:11:34.07Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 378182,
+    "fields": {
+      "System.Title": "[CMS] Tipos de conteudo sem o campo de revisão",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-05T16:56:40.37Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-05T19:27:24.92Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 378399,
+    "fields": {
+      "System.Title": "Fix: padronizar roteamento e mudança de linguagem",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-06T20:36:52.127Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-12T11:56:41.72Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 378607,
+    "fields": {
+      "System.Title": "Urls acessando com acentuação",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-10T11:41:48.29Z",
+      "System.Tags": "Deploy 04-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T19:12:51.683Z",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 380017,
+    "fields": {
+      "System.Title": "[Unidades] Revisão do Filtro de Unidades Publicas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-24T11:33:50.34Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:58:42.46Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 380025,
+    "fields": {
+      "System.Title": "[CMS] Revisão Links Visão Geral",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-24T12:00:02.8Z",
+      "System.Tags": "CMS; Deploy 04-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T19:14:41.227Z",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 380203,
+    "fields": {
+      "System.Title": "[BUG][CMS] Corrigir cache para paginas de listagem",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-25T11:28:41.773Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-26T11:09:41.85Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Bruno Estima"
+      }
+    }
+  },
+  {
+    "id": 380205,
+    "fields": {
+      "System.Title": "Retirar link Visão Geral dos menus",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-25T11:55:20.03Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-27T17:52:43.947Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 380255,
+    "fields": {
+      "System.Title": "[CMS] Pagina 404 sem invalidação de cache",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-25T15:35:21.54Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-25T18:04:16.093Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 380473,
+    "fields": {
+      "System.Title": "Correção do espaçamento no layout do Glossário de Saúde",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-26T19:59:54.26Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-03T12:06:54.157Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Matheus Camillo dos Santos Fernandes"
+      }
+    }
+  },
+  {
+    "id": 380573,
+    "fields": {
+      "System.Title": "Não considerar queryPameters artificais na chave redis",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-27T14:22:06.197Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-02-27T17:47:56.457Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 380854,
+    "fields": {
+      "System.Title": "Ajustes na cor e espaçamento",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-03T13:42:03.68Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T11:25:41.23Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381025,
+    "fields": {
+      "System.Title": "Correção Microfront Exames",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-04T13:45:52.463Z",
+      "System.Tags": "Deploy 04-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T18:05:00.8Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381065,
+    "fields": {
+      "System.Title": "Correção e Melhorias",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-04T15:34:34.363Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-16T11:55:51.577Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381091,
+    "fields": {
+      "System.Title": "Estilos Editor de Texto",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-04T18:09:01.543Z",
+      "System.Tags": "Deploy 04-03-2026; MANUTENCAO; Portal",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T22:21:43.027Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381366,
+    "fields": {
+      "System.Title": "Filtros Hospital do Futuro",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T02:48:01.97Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T11:48:48.123Z",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 381561,
+    "fields": {
+      "System.Title": "[Unidades] Cache de Conteúdos Relacionados em Páginas Compostas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T18:42:56.67Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:56:09.22Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381563,
+    "fields": {
+      "System.Title": "Problema ao acessar url com âncora (#)",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T18:47:22.037Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T14:04:14.247Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 381595,
+    "fields": {
+      "System.Title": "[Sitemap] Desconsiderar urls que foram desativadas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T10:37:55.063Z",
+      "System.Tags": "Deploy 01-04-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-01T11:51:37.513Z",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 381645,
+    "fields": {
+      "System.Title": "[Portal] Fix",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T14:45:09.073Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-10T18:01:09.787Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381726,
+    "fields": {
+      "System.Title": "Correção meta robots noindex",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T19:10:43.42Z",
+      "System.Tags": "Deploy 10-03-2026; Hotfix; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-10T21:10:35.517Z",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 381755,
+    "fields": {
+      "System.Title": "canonicalUrl ignora valor do CMS",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T21:14:00.687Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T15:21:48.483Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 381756,
+    "fields": {
+      "System.Title": "canonicalUrl ignora valor do CMS",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T21:14:32.66Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T15:21:17.37Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 382073,
+    "fields": {
+      "System.Title": "Páginas que voltaram com conteúdo antigo",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-12T20:51:35.293Z",
+      "System.Tags": "CMS; Deploy 01-04-2026",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-01T11:52:49.33Z",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 382623,
+    "fields": {
+      "System.Title": "[WIse] Ajustes de espaçamentos página simples",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-19T13:31:39.547Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-24T14:53:25.947Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 383526,
+    "fields": {
+      "System.Title": "Preview em Rotas Localizadas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-27T14:09:21.193Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-27T19:07:38.343Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 383791,
+    "fields": {
+      "System.Title": "[Portal] Tempo de Espera Unidades",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-30T14:45:29.54Z",
+      "System.Tags": "Deploy 09-04-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:41:03.35Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 384082,
+    "fields": {
+      "System.Title": "[CMS] Erro ao salvar ícone",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-31T20:21:59Z",
+      "System.Tags": "Deploy 01-04-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-01T11:54:10.28Z",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 384454,
+    "fields": {
+      "System.Title": "[Redis] Ignorar Parâmetros de Campanha",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-07T11:59:25.663Z",
+      "System.Tags": "Deploy 09-04-2026; Frontend; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:33:13.24Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 385198,
+    "fields": {
+      "System.Title": "Redirecionamento de URLs traduzidas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-14T09:57:50.483Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-22T12:27:49.977Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 385422,
+    "fields": {
+      "System.Title": "[CMS] Tratativas nas URLs Customizadas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-15T17:31:03.31Z",
+      "System.Tags": "Deploy 22-04-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-22T19:34:31.49Z",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 385785,
+    "fields": {
+      "System.Title": "[Frontend] Corrigir geração do sitemap que multiplica a home ao tratar slugs com \"home\" como página inicial",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-22T14:02:56.197Z",
+      "System.Tags": "Deploy 06-05-2026; Frontend; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-06T16:58:25.917Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 386360,
+    "fields": {
+      "System.Title": "Remoção do type guard do editorComponent causando erro",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-28T12:01:15.053Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-30T13:14:42.973Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 387273,
+    "fields": {
+      "System.Title": "Corrigir bloco de editor e textos em artigos de Vida Saudável",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-05T12:05:19.753Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-06T12:22:54.717Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 387385,
+    "fields": {
+      "System.Title": "No artigo de vida saudável contém uma imagem, mas ela não está sendo exibida",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-05T14:37:31.243Z",
+      "System.Tags": "Front End (Bug)",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-19T11:25:54.203Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 387413,
+    "fields": {
+      "System.Title": "[Portal] Corrigir exibição das setas de navegação do carrossel de serviços",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-05T16:35:01.017Z",
+      "System.Tags": "Deploy 01-06-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T18:22:46.267Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 388537,
+    "fields": {
+      "System.Title": "Inconsistencias /servicos",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-12T15:53:31.35Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-18T12:20:18.55Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 388541,
+    "fields": {
+      "System.Title": "Inconsistencias na página de Vida Saudável",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-12T16:05:10.523Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-19T11:28:27.99Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 388542,
+    "fields": {
+      "System.Title": "Inconsistencias em /unidades",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-12T16:11:36.483Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-14T22:57:11.33Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 388739,
+    "fields": {
+      "System.Title": "Incidente de mensuração GTM no BannerGraphicsLess: CTA sem captura correta de categoria, label e link",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-13T14:12:49.14Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-13T15:52:48.737Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 389651,
+    "fields": {
+      "System.Title": "[Einstein.br] Botão menu",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-19T11:24:21.227Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-02T12:29:57.087Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 390171,
+    "fields": {
+      "System.Title": "Na listagem de stories, está faltando a palavra \"Em\" na data",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-20T13:24:43.977Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T17:28:34.33Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 390236,
+    "fields": {
+      "System.Title": "Está exibindo apenas 9 stories, está sem paginação",
+      "System.WorkItemType": "Bug",
+      "System.State": "Removed",
+      "System.CreatedDate": "2026-05-20T14:01:57.57Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 390251,
+    "fields": {
+      "System.Title": "Correr story automaticamente",
+      "System.WorkItemType": "Bug",
+      "System.State": "Removed",
+      "System.CreatedDate": "2026-05-20T14:10:05.94Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 390253,
+    "fields": {
+      "System.Title": "Não deve deixar cadastrar storie sem imagem",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-20T14:22:55.977Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-16T11:42:23.983Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 390255,
+    "fields": {
+      "System.Title": "Não refletiu no Portal a alteração da imagem no CSM",
+      "System.WorkItemType": "Bug",
+      "System.State": "Removed",
+      "System.CreatedDate": "2026-05-20T14:42:25.117Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 390256,
+    "fields": {
+      "System.Title": "Na visão de mobile/tablet, está cortando um pouco as laterais",
+      "System.WorkItemType": "Bug",
+      "System.State": "Removed",
+      "System.CreatedDate": "2026-05-20T14:47:10.907Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      }
+    }
+  },
+  {
+    "id": 390613,
+    "fields": {
+      "System.Title": "Correção de Metatags Fora do <head>",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-22T13:16:35.923Z",
+      "System.Tags": "Deploy 01-06-2026; Front End (Bug); MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T17:18:16.97Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 390812,
+    "fields": {
+      "System.Title": "Bugs em /unidades, /o-einstein e /central-de-atendimento",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-25T19:12:04.563Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-27T21:04:09.177Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 390813,
+    "fields": {
+      "System.Title": "Bugs em /glossário-de-saúde e /vida-saudável",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-25T19:12:07.983Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-28T11:45:55.207Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 390814,
+    "fields": {
+      "System.Title": "Botão \"Saiba Mais\" do componente \"Galeria da Informação\" abaixo das setas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Committed",
+      "System.CreatedDate": "2026-05-25T20:05:08.02Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 391261,
+    "fields": {
+      "System.Title": "Bugs em /home",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-28T14:12:05.62Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T14:47:04.927Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 392544,
+    "fields": {
+      "System.Title": "[Menu] Botões com tamanhos despadronizados em mobile e tablet",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-03T14:35:13.403Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-08T14:47:09.577Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 392652,
+    "fields": {
+      "System.Title": "CK Editor não reflete alinhamento à direita aplicado no CMS",
+      "System.WorkItemType": "Bug",
+      "System.State": "Removed",
+      "System.CreatedDate": "2026-06-05T13:02:24Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 392655,
+    "fields": {
+      "System.Title": "Erro de formatação | página sobre - estilo do texto perdeu a cor",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-05T13:05:38.81Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:48:01.923Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 393089,
+    "fields": {
+      "System.Title": "Componente \"Navegue por\"",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-09T14:10:01.483Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T13:59:35.193Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 393324,
+    "fields": {
+      "System.Title": "Iframe | Espaçamento quebrado",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-10T20:09:24.897Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T14:00:04.343Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 393662,
+    "fields": {
+      "System.Title": "O link está redirecionando para uma pagina externa, mas não está abrindo",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-16T12:08:17.503Z",
+      "System.Tags": "Back End (Bug); Deploy 13-07-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T12:52:57.213Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 393868,
+    "fields": {
+      "System.Title": "switch formulário CMS",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-17T16:21:08.53Z",
+      "System.Tags": "MANUTENCAO; QA",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-22T17:44:41.137Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 393869,
+    "fields": {
+      "System.Title": "Não carrega imagem",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-17T16:30:45.347Z",
+      "System.Tags": "MANUTENCAO; QA",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-22T17:44:53.273Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Guilherme de Campos Ribeiro"
+      }
+    }
+  },
+  {
+    "id": 393872,
+    "fields": {
+      "System.Title": "Banner_full",
+      "System.WorkItemType": "Bug",
+      "System.State": "New",
+      "System.CreatedDate": "2026-06-17T16:52:31.913Z",
+      "System.Tags": "MANUTENCAO; QA",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 394015,
+    "fields": {
+      "System.Title": "Card destaque Status Publicado",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-18T14:58:23.72Z",
+      "System.Tags": "MANUTENCAO; QA",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-14T14:51:31.07Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Bill Hebert Pereira da Rocha Choi"
+      }
+    }
+  },
+  {
+    "id": 394082,
+    "fields": {
+      "System.Title": "Ao copiar e colar um texto no CK Editor ele não deixa o texto puro",
+      "System.WorkItemType": "Bug",
+      "System.State": "New",
+      "System.CreatedDate": "2026-06-18T18:33:21.6Z",
+      "System.Tags": "Front End (Bug); MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 394083,
+    "fields": {
+      "System.Title": "Os estilos no CK Editor não estão sendo aplicados",
+      "System.WorkItemType": "Bug",
+      "System.State": "New",
+      "System.CreatedDate": "2026-06-18T18:34:33.027Z",
+      "System.Tags": "Front End (Bug); MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional"
+    }
+  },
+  {
+    "id": 394108,
+    "fields": {
+      "System.Title": "Alinhamento horizontal no CKEditor",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-19T12:00:52.007Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-23T12:22:47.177Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 394220,
+    "fields": {
+      "System.Title": "content card",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T11:05:33.157Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-23T11:29:55.23Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "4 - Teste de Liberação",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 394222,
+    "fields": {
+      "System.Title": "ZdsAccordion -> Accordion details",
+      "System.WorkItemType": "Bug",
+      "System.State": "New",
+      "System.CreatedDate": "2026-06-22T11:08:31.547Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
       "Custom.HIAE_MOMENTO_ABERTURA": "4 - Teste de Liberação"
     }
   },
   {
-    "id": 500005,
+    "id": 394253,
     "fields": {
-      "System.Title": "SEO structured data ausente",
+      "System.Title": "TabGroupComponent quebra layout",
       "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-23T10:00:00Z"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T13:48:29.577Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:51:39.923Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
     }
   },
   {
-    "id": 500006,
+    "id": 394268,
     "fields": {
-      "System.Title": "Ordenação incorreta em Navegue por",
+      "System.Title": "Ícones em central de atendimento",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-06-25T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "3 - Teste Integrado"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T14:44:25.67Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-23T21:16:01.69Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
     }
   },
   {
-    "id": 500007,
+    "id": 394275,
     "fields": {
-      "System.Title": "Contraste insuficiente em botão",
+      "System.Title": "Está renderizando a tag, mesmo sem ter conteudo",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-01T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto Funcional"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T15:03:19.827Z",
+      "System.Tags": "Front End (Bug); MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-24T11:54:13.553Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
     }
   },
   {
-    "id": 500009,
+    "id": 394318,
     "fields": {
-      "System.Title": "Carousel color scheme incorreto",
+      "System.Title": "Bugs em Saúde e Bem-Estar",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T17:27:47.05Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-23T11:06:38.587Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 394533,
+    "fields": {
+      "System.Title": "[SEO] Dados estruturados em Páginas de Artigo",
       "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-06T10:00:00Z"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-24T13:11:43.317Z",
+      "System.Tags": "Deploy 06-07-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:51:48.013Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
     }
   },
   {
-    "id": 500010,
+    "id": 394583,
     "fields": {
-      "System.Title": "Regressao de CLS na home",
+      "System.Title": "ContentCard ignora alinhamento vertical",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-24T18:59:31.45Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-26T20:17:52.203Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 394649,
+    "fields": {
+      "System.Title": "Alguns botões está com um \"to\" do lado do botão",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-25T14:39:06.917Z",
+      "System.Tags": "Back End (Bug); Deploy 13-07-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-30T13:18:16.867Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 394654,
+    "fields": {
+      "System.Title": "Ao incluir o componente card com icone, o card é criado mesmo sem preencher o titulo",
+      "System.WorkItemType": "Bug",
+      "System.State": "Resolved",
+      "System.CreatedDate": "2026-06-25T16:22:52.58Z",
+      "System.Tags": "Front End (Bug)",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 394655,
+    "fields": {
+      "System.Title": "Ao incluir o componente Formulário, os campos visives para conteudista estão incorretos",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-25T16:24:25.92Z",
+      "System.Tags": "Back End (Bug); Deploy 13-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-13T19:36:22.48Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "1 - Teste Produto - Funcional",
+      "System.AssignedTo": {
+        "displayName": "Matheus Grigorio Lins Medeiros"
+      }
+    }
+  },
+  {
+    "id": 394749,
+    "fields": {
+      "System.Title": "bugs em /serviços",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-26T19:48:23.293Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-29T14:17:05.443Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "4 - Teste de Liberação",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 394833,
+    "fields": {
+      "System.Title": "[Portal] Correção de leitura de window/document no render",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-29T14:40:39.597Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-30T17:28:04.777Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 395619,
+    "fields": {
+      "System.Title": "[Portal] FlexibleCarousel: corrigir regressão",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-03T18:04:28.853Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-03T18:52:14.66Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "4 - Teste de Liberação",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 395633,
+    "fields": {
+      "System.Title": "regressão content card",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-03T19:24:52.86Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-03T19:34:59.18Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 395650,
+    "fields": {
+      "System.Title": "ServicesSwiperCarousel quebra no render sob templates RSC por import estático do Swiper",
+      "System.WorkItemType": "Bug",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-03T19:38:36.097Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-04T01:10:33.707Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 395696,
+    "fields": {
+      "System.Title": "Carrosséis Perderam Color Scheme quando Background é Escuro",
       "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-08T10:00:00Z"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T13:06:32.547Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:48:39.057Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
     }
   },
   {
-    "id": 500011,
+    "id": 395697,
     "fields": {
-      "System.Title": "CardGallery sem transição no hover",
+      "System.Title": "Regressão CLS: fontes carregadas após o render, fora do next/font",
       "System.WorkItemType": "Incident",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-10T10:00:00Z"
+      "System.State": "Waiting GM",
+      "System.CreatedDate": "2026-07-06T13:06:41.557Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
     }
   },
   {
-    "id": 500012,
+    "id": 395759,
     "fields": {
-      "System.Title": "Espaçamento do rodapé",
+      "System.Title": "Espaçamento no check up executivo (cadastro fantasma?)",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-07T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "2 - Teste Produto Fábrica de Teste"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T14:38:49.74Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-06T14:49:23.32Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
     }
   },
   {
-    "id": 500013,
+    "id": 395771,
     "fields": {
-      "System.Title": "Bug com momento 6 (furo de convenção)",
+      "System.Title": "Bugs de imagem e alinhamento de card",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-09T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T16:10:09.1Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-24T11:53:58.18Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
     }
   },
   {
-    "id": 500014,
+    "id": 395836,
     "fields": {
-      "System.Title": "Alinhamento de ícones",
+      "System.Title": "AnchorNavigation: espaçamento do botão mais pro menu",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-22T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "3 - Teste Integrado"
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T19:00:26.947Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-06T19:36:28.147Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
     }
   },
   {
-    "id": 500015,
+    "id": 396085,
     "fields": {
-      "System.Title": "Outro bug com momento 6 sem incidente na janela",
+      "System.Title": "Hover quebrado no componente \"CardGallery\"",
+      "System.WorkItemType": "Incident",
+      "System.State": "QA",
+      "System.CreatedDate": "2026-07-07T20:07:28.997Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      }
+    }
+  },
+  {
+    "id": 398439,
+    "fields": {
+      "System.Title": "Banner imagem sobreposta",
       "System.WorkItemType": "Bug",
-      "System.State": "Closed",
-      "System.CreatedDate": "2026-07-23T10:00:00Z",
-      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live"
+      "System.State": "Resolved",
+      "System.CreatedDate": "2026-07-22T13:22:57.033Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 398498,
+    "fields": {
+      "System.Title": "UnitsEvolutionCarousel:  altura inconsistente entre cards no desktop",
+      "System.WorkItemType": "Bug",
+      "System.State": "Resolved",
+      "System.CreatedDate": "2026-07-22T14:41:33.633Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
+    }
+  },
+  {
+    "id": 398940,
+    "fields": {
+      "System.Title": "Accordion cor de link",
+      "System.WorkItemType": "Bug",
+      "System.State": "New",
+      "System.CreatedDate": "2026-07-24T20:40:36.763Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live"
+    }
+  },
+  {
+    "id": 398941,
+    "fields": {
+      "System.Title": "BannerFull: gradient + espaçamento",
+      "System.WorkItemType": "Bug",
+      "System.State": "Committed",
+      "System.CreatedDate": "2026-07-24T20:43:34.817Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      }
     }
   }
 ]

@@ -9,7 +9,10 @@ import type {
 } from '@/lib/types';
 
 const MS_PER_DAY = 86_400_000;
-const DEPLOY_DATE_PATTERN = /Deploy\s+(\d{2})-(\d{2})-(\d{4})/;
+// Real board titles are not uniform: `[Portal] Deploy - 01/06/2026`,
+// `[Portal] Deploy -06/07/2026` and `[Portal] Deploy 21-07-2026` all occur.
+// Accept an optional dash separator and either `-` or `/` inside the date.
+const DEPLOY_DATE_PATTERN = /Deploy\s*-?\s*(\d{2})[-/](\d{2})[-/](\d{4})/;
 
 export interface RawWorkItem {
   id: number;

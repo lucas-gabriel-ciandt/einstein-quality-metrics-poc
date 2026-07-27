@@ -1,0 +1,18 @@
+# Scope filter 2 of the extraction funnel: "front within patients".
+# An item counts as patients-front when its System.AssignedTo displayName is
+# listed here. A dev joining or leaving the squad edits this file, never code.
+# Names must match the Azure DevOps display name exactly (org hiae).
+#
+# Referenced by .claude/skills/extract-board-metrics/board-model.md.
+
+frontDevs:
+  - Lucas Gabriel da Silva
+  - Samuel Soares da Rocha
+  - Joao Carlos Rodrigues Dias
+  - Edilson Aparecido Rodrigues
+
+# Medicos front devs are NOT listed yet: the `todos` / `medicos` team filter
+# (pending backlog P1 in docs/spec.md) needs their board display names, which
+# still have to be collected. Git shows ThaisOR, phmelosilva and Rodrigo Silva
+# as active committers in the front repo since April 2026.
+medicosFrontDevs: []

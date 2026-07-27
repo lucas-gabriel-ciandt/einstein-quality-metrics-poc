@@ -18,7 +18,28 @@ import findingsFixture from '../../tests/__mocks__/az-window-findings.json';
 
 const rawEnablers = enablersFixture as RawWorkItem[];
 const rawIncidents = incidentsFixture as RawWorkItem[];
-const rawFindings = findingsFixture as RawWorkItem[];
+const rawBoardFindings = findingsFixture as RawWorkItem[];
+
+// Scope funnel filter 2 ("front within patients"), mirroring team.yml. The
+// findings fixture is the unfiltered board response, so the funnel is exercised
+// here rather than baked into the recording.
+const FRONT_DEVS = new Set([
+  'Lucas Gabriel da Silva',
+  'Samuel Soares da Rocha',
+  'Joao Carlos Rodrigues Dias',
+  'Edilson Aparecido Rodrigues',
+]);
+
+function assignedTo(item: RawWorkItem): string {
+  const raw = item.fields['System.AssignedTo'] as
+    | { displayName?: string }
+    | undefined;
+  return raw?.displayName ?? '';
+}
+
+const rawFindings = rawBoardFindings.filter((item) =>
+  FRONT_DEVS.has(assignedTo(item)),
+);
 
 function incident(overrides: Partial<Incident>): Incident {
   return {
@@ -93,17 +114,41 @@ describe('parseDeployDate', () => {
     expect(parseDeployDate('[Portal] Deploy 01-06-2026')).toBe('2026-06-01');
     expect(parseDeployDate('[Portal] Deploy 27-07-2026')).toBe('2026-07-27');
   });
+
+  // The five real titles on the board are not uniform. A pattern that only
+  // accepts `Deploy DD-MM-YYYY` throws on three of them.
+  it('accepts the slash and dash-separator title variants the board carries', () => {
+    expect(parseDeployDate('[Portal] Deploy - 01/06/2026')).toBe('2026-06-01');
+    expect(parseDeployDate('[Portal] Deploy - 23/06/2026')).toBe('2026-06-23');
+    expect(parseDeployDate('[Portal] Deploy -06/07/2026')).toBe('2026-07-06');
+    expect(parseDeployDate('[Portal] Deploy 21-07-2026')).toBe('2026-07-21');
+  });
+
+  it('throws on a deploy title with no parseable date', () => {
+    expect(() => parseDeployDate('[Portal] Deploy sem data')).toThrow();
+  });
 });
 
 describe('toFinding', () => {
   it('reduces a raw Bug item to its type and parsed momento', () => {
-    const bug = rawFindings.find((item) => item.id === 500003) as RawWorkItem;
-    expect(toFinding(bug)).toEqual({ type: 'Bug', momento: 2 });
+    const bug = rawFindings.find((item) => item.id === 372314) as RawWorkItem;
+    expect(toFinding(bug)).toEqual({ type: 'Bug', momento: 0 });
   });
 
   it('reduces a raw Incident with no momento to type Incident and momento null', () => {
-    const inc = rawFindings.find((item) => item.id === 500001) as RawWorkItem;
+    const inc = rawFindings.find((item) => item.id === 380017) as RawWorkItem;
     expect(toFinding(inc)).toEqual({ type: 'Incident', momento: null });
+  });
+});
+
+describe('scope funnel', () => {
+  it('keeps only findings assigned to a front dev and counts the unassigned pile', () => {
+    expect(rawBoardFindings).toHaveLength(101);
+    expect(rawFindings).toHaveLength(67);
+    const unassigned = rawBoardFindings.filter(
+      (item) => assignedTo(item) === '',
+    );
+    expect(unassigned).toHaveLength(8);
   });
 });
 
@@ -115,12 +160,12 @@ describe('buildIncidents', () => {
     for (const row of incidents) {
       expect(typeof row.id).toBe('string');
     }
-    expect(byId(incidents).get('390722001')?.titulo).toBe(
-      'Menu mobile quebrado apos deploy',
+    expect(byId(incidents).get('380017')?.titulo).toBe(
+      '[Unidades] Revisão do Filtro de Unidades Publicas',
     );
   });
 
-  it('reproduces the spec Sev 1-2 MTTR series (0, 0, 1, 10, 13, 34 days)', () => {
+  it('reproduces the spec "Crítico e Alto" MTTR series (0, 0, 1, 10, 13, 34 days)', () => {
     const sev12 = incidents
       .filter((i) => i.severity <= 2 && i.mttrDias !== null)
       .map((i) => i.mttrDias as number)
@@ -128,12 +173,14 @@ describe('buildIncidents', () => {
     expect(sev12).toEqual([0, 0, 1, 10, 13, 34]);
   });
 
-  it('reproduces the spec Sev 3-4 MTTR series (4, 14, 14 days)', () => {
+  it('reproduces the "Médio e Baixo" MTTR series (n=18)', () => {
     const sev34 = incidents
       .filter((i) => i.severity >= 3 && i.mttrDias !== null)
       .map((i) => i.mttrDias as number)
       .sort((a, b) => a - b);
-    expect(sev34).toEqual([4, 14, 14]);
+    expect(sev34).toEqual([
+      0, 0, 0, 1, 2, 2, 4, 5, 8, 10, 14, 14, 15, 15, 21, 21, 27, 32,
+    ]);
   });
 
   it('preserves open incidents with closed and mttrDias null', () => {
@@ -149,16 +196,14 @@ describe('buildIncidents', () => {
   });
 
   it('stores dates as date-only and computes mttrDias as closed minus created', () => {
-    const row = byId(incidents).get('383001001');
-    expect(row?.created).toBe('2026-02-01');
-    expect(row?.closed).toBe('2026-03-07');
+    const row = byId(incidents).get('380017');
+    expect(row?.created).toBe('2026-02-24');
+    expect(row?.closed).toBe('2026-03-30');
     expect(row?.mttrDias).toBe(34);
   });
 
   it('extracts the Tag B deploy tag, and null when absent', () => {
-    expect(byId(incidents).get('390722001')?.deployTag).toBe(
-      'Deploy 01-06-2026',
-    );
+    expect(byId(incidents).get('380017')?.deployTag).toBe('Deploy 30-03-2026');
     expect(byId(incidents).get('390814')?.deployTag).toBeNull();
   });
 });
@@ -185,43 +230,50 @@ describe('buildDeploys', () => {
 
   it('carries the enabler titulo through', () => {
     expect(byEnablerId(deploys).get('390722')?.titulo).toBe(
-      '[Portal] Deploy 01-06-2026',
+      '[Portal] Deploy - 01/06/2026',
     );
   });
 
   it('window-attributes findings and counts pre findings as bugsAntes', () => {
     const map = byEnablerId(deploys);
-    expect(map.get('390722')?.bugsAntes).toBe(2);
-    expect(map.get('394210')?.bugsAntes).toBe(2);
-    expect(map.get('395747')?.bugsAntes).toBe(1);
-    expect(map.get('397800')?.bugsAntes).toBe(1);
+    expect(map.get('390722')?.bugsAntes).toBe(4);
+    expect(map.get('394210')?.bugsAntes).toBe(4);
+    expect(map.get('395747')?.bugsAntes).toBe(0);
+    expect(map.get('397800')?.bugsAntes).toBe(3);
     expect(map.get('398412')?.bugsAntes).toBe(0);
   });
 
   it('counts post findings (incidents and momento-6 bugs) as incidentesPos', () => {
     const map = byEnablerId(deploys);
-    expect(map.get('390722')?.incidentesPos).toBe(2);
-    expect(map.get('394210')?.incidentesPos).toBe(1);
-    expect(map.get('395747')?.incidentesPos).toBe(4);
-    expect(map.get('397800')?.incidentesPos).toBe(1);
+    expect(map.get('390722')?.incidentesPos).toBe(6);
+    expect(map.get('394210')?.incidentesPos).toBe(3);
+    expect(map.get('395747')?.incidentesPos).toBe(6);
+    expect(map.get('397800')?.incidentesPos).toBe(0);
     expect(map.get('398412')?.incidentesPos).toBe(0);
   });
 
   it('derives dre as pre/(pre+post) rounded to 4 decimals, null when empty', () => {
     const map = byEnablerId(deploys);
-    expect(map.get('390722')?.dre).toBe(0.5);
-    expect(map.get('394210')?.dre).toBe(0.6667);
-    expect(map.get('395747')?.dre).toBe(0.2);
-    expect(map.get('397800')?.dre).toBe(0.5);
+    expect(map.get('390722')?.dre).toBe(0.4);
+    expect(map.get('394210')?.dre).toBe(0.5714);
+    expect(map.get('395747')?.dre).toBe(0);
+    expect(map.get('397800')?.dre).toBe(1);
     expect(map.get('398412')?.dre).toBeNull();
   });
 
+  // Answer key (spec mining 2026-07-22/23): front Incidents per window are
+  // 6, 1, 3, 0, 0 -> CFR 3/4 over the closed windows.
   it('flags causouIncidente only for windows carrying an Incident work item', () => {
     expect(deploys.map((d) => d.causouIncidente)).toEqual([1, 1, 1, 0, 0]);
   });
 
   it('does not attribute findings created before the first deploy window', () => {
-    expect(byEnablerId(deploys).get('390722')?.incidentesPos).toBe(2);
+    const attributed = deploys.reduce(
+      (sum, d) => sum + d.bugsAntes + d.incidentesPos,
+      0,
+    );
+    expect(attributed).toBeLessThan(rawFindings.length);
+    expect(attributed).toBe(26);
   });
 
   it('leaves falseAlarms null when no previous dataset is provided', () => {
@@ -235,7 +287,7 @@ describe('buildDeploys', () => {
       {
         enablerId: '390722',
         data: '2026-06-01',
-        titulo: '[Portal] Deploy 01-06-2026',
+        titulo: '[Portal] Deploy - 01/06/2026',
         bugsAntes: 0,
         incidentesPos: 0,
         dre: null,
@@ -245,7 +297,7 @@ describe('buildDeploys', () => {
       {
         enablerId: '395747',
         data: '2026-07-06',
-        titulo: '[Portal] Deploy 06-07-2026',
+        titulo: '[Portal] Deploy -06/07/2026',
         bugsAntes: 0,
         incidentesPos: 0,
         dre: null,
