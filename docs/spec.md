@@ -652,7 +652,14 @@ all patients-area; the 36 medicos front items are all Bugs, zero Incidents. DRE
 per window 0.6 / 0.8333 / 0.8125 / 1 / 0.8571 (the merge lifts DRE because
 medicos front is pre-heavy sprint catches with no Incidents). CFR 4/5.
 
-**Why filling the `Activity` field ("Tipo de Servico") correctly matters —
+**Which field: `Microsoft.VSTS.Common.Activity`, UI label "Tipo de Atividade".**
+Verified live on 2026-08-04: this field carries the front/back marker on 94 of
+173 items (56 `Front End (BUG)` + 38 `Back End (BUG)`). Do NOT confuse it with
+`Custom.HIAE_TIPO_SERVICO` (UI label "Tipo de Serviço"), a look-alike field that
+is empty on 128 of 173 items and is not read by the extraction. Setting only
+"Tipo de Serviço" does nothing for the metrics.
+
+**Why filling the `Activity` field ("Tipo de Atividade") correctly matters —
 raise this with both squads.** The field (`Front End (BUG)` / `Back End (BUG)`)
 is the *only* board-native, dev-independent front/back classifier. Every item
 that carries it is measured correctly regardless of who is assigned or which

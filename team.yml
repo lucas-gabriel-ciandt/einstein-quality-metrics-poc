@@ -2,7 +2,8 @@
 #
 # An item counts as front when EITHER:
 #   1. Microsoft.VSTS.Common.Activity == 'Front End (BUG)'  (board field,
-#      UI label "Tipo de Servico"), OR
+#      UI label "Tipo de Atividade" -- NOT the near-empty Custom.HIAE_TIPO_SERVICO
+#      field whose UI label is "Tipo de Servico"), OR
 #   2. System.AssignedTo displayName is listed in `frontDevs` below.
 #
 # Branch 1 is the correct board convention and covers the whole front repo

@@ -13,8 +13,11 @@ item is front when EITHER branch holds (Option A, "front in general"):
 
 1. **Field branch (both teams).** `[Microsoft.VSTS.Common.Activity] =
    'Front End (BUG)'`. This is the board's own front/back marker (labelled
-   "Tipo de Serviço" on the form; its counterpart is `Back End (BUG)`). Medicos
-   fill it correctly, so it brings the whole medicos front in on its own.
+   **"Tipo de Atividade"** on the form; its counterpart is `Back End (BUG)`).
+   Do NOT confuse it with `Custom.HIAE_TIPO_SERVICO` (UI label "Tipo de
+   Serviço"), a different field that is empty on ~74% of items and is NOT read
+   by the extraction. Medicos fill Tipo de Atividade correctly, so it brings
+   the whole medicos front in on its own.
 2. **Allowlist branch (patients rescue).** `[System.AssignedTo]` in the current
    patients front-dev list (versioned config, `team.yml`): Lucas Gabriel da
    Silva, Samuel Soares da Rocha, Joao Carlos Rodrigues Dias, Edilson Aparecido
