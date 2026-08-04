@@ -1,0 +1,42 @@
+[
+  {
+    "id": 390722,
+    "fields": {
+      "System.Title": "[Portal] Deploy - 01/06/2026",
+      "System.CreatedDate": "2026-05-25T13:23:20.9Z",
+      "System.Tags": "deploy-portal"
+    }
+  },
+  {
+    "id": 394210,
+    "fields": {
+      "System.Title": "[Portal] Deploy - 23/06/2026",
+      "System.CreatedDate": "2026-06-19T20:27:42.94Z",
+      "System.Tags": "Deploy 23-06-2026; deploy-portal"
+    }
+  },
+  {
+    "id": 395747,
+    "fields": {
+      "System.Title": "[Portal] Deploy 06/07/2026",
+      "System.CreatedDate": "2026-07-06T14:33:05.457Z",
+      "System.Tags": "deploy-portal"
+    }
+  },
+  {
+    "id": 397800,
+    "fields": {
+      "System.Title": "[Portal] Deploy 21-07-2026",
+      "System.CreatedDate": "2026-07-20T13:05:55.17Z",
+      "System.Tags": "Deploy 21-07-2026; deploy-portal"
+    }
+  },
+  {
+    "id": 398412,
+    "fields": {
+      "System.Title": "[Portal] Deploy 03-08-2026",
+      "System.CreatedDate": "2026-07-22T12:18:06.033Z",
+      "System.Tags": "Deploy 03-08-2026; deploy-portal"
+    }
+  }
+]

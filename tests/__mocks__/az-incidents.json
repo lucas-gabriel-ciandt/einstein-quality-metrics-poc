@@ -1,0 +1,477 @@
+[
+  {
+    "id": 380017,
+    "fields": {
+      "System.Title": "[Unidades] Revisão do Filtro de Unidades Publicas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-02-24T11:33:50.34Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:58:42.46Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381025,
+    "fields": {
+      "System.Title": "Correção Microfront Exames",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-04T13:45:52.463Z",
+      "System.Tags": "Deploy 04-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T18:05:00.8Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381091,
+    "fields": {
+      "System.Title": "Estilos Editor de Texto",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-04T18:09:01.543Z",
+      "System.Tags": "Deploy 04-03-2026; MANUTENCAO; Portal",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-04T22:21:43.027Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381366,
+    "fields": {
+      "System.Title": "Filtros Hospital do Futuro",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T02:48:01.97Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T11:48:48.123Z",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381561,
+    "fields": {
+      "System.Title": "[Unidades] Cache de Conteúdos Relacionados em Páginas Compostas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T18:42:56.67Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:56:09.22Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381563,
+    "fields": {
+      "System.Title": "Problema ao acessar url com âncora (#)",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-09T18:47:22.037Z",
+      "System.Tags": "Deploy 30-03-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T14:04:14.247Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381726,
+    "fields": {
+      "System.Title": "Correção meta robots noindex",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T19:10:43.42Z",
+      "System.Tags": "Deploy 10-03-2026; Hotfix; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "1 - Critical",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-10T21:10:35.517Z",
+      "System.AssignedTo": {
+        "displayName": "Joao Carlos Rodrigues Dias"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 381755,
+    "fields": {
+      "System.Title": "canonicalUrl ignora valor do CMS",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-10T21:14:00.687Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T15:21:48.483Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 383526,
+    "fields": {
+      "System.Title": "Preview em Rotas Localizadas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-27T14:09:21.193Z",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-03-27T19:07:38.343Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 383791,
+    "fields": {
+      "System.Title": "[Portal] Tempo de Espera Unidades",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-03-30T14:45:29.54Z",
+      "System.Tags": "Deploy 09-04-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:41:03.35Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  },
+  {
+    "id": 384454,
+    "fields": {
+      "System.Title": "[Redis] Ignorar Parâmetros de Campanha",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-07T11:59:25.663Z",
+      "System.Tags": "Deploy 09-04-2026; Frontend; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:33:13.24Z",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "DEMANDA INTERNA"
+    }
+  },
+  {
+    "id": 385198,
+    "fields": {
+      "System.Title": "Redirecionamento de URLs traduzidas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-14T09:57:50.483Z",
+      "System.Tags": "MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-04-22T12:27:49.977Z",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
+    }
+  },
+  {
+    "id": 385785,
+    "fields": {
+      "System.Title": "[Frontend] Corrigir geração do sitemap que multiplica a home ao tratar slugs com \"home\" como página inicial",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-04-22T14:02:56.197Z",
+      "System.Tags": "Deploy 06-05-2026; Frontend; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-06T16:58:25.917Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
+    }
+  },
+  {
+    "id": 387413,
+    "fields": {
+      "System.Title": "[Portal] Corrigir exibição das setas de navegação do carrossel de serviços",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-05T16:35:01.017Z",
+      "System.Tags": "Deploy 01-06-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T18:22:46.267Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
+    }
+  },
+  {
+    "id": 388739,
+    "fields": {
+      "System.Title": "Incidente de mensuração GTM no BannerGraphicsLess: CTA sem captura correta de categoria, label e link",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-13T14:12:49.14Z",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-05-13T15:52:48.737Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
+    }
+  },
+  {
+    "id": 390613,
+    "fields": {
+      "System.Title": "Correção de Metatags Fora do <head>",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-22T13:16:35.923Z",
+      "System.Tags": "Deploy 01-06-2026; Front End (Bug); MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-01T17:18:16.97Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
+    }
+  },
+  {
+    "id": 390814,
+    "fields": {
+      "System.Title": "Botão \"Saiba Mais\" do componente \"Galeria da Informação\" abaixo das setas",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-05-25T20:05:08.02Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-04T11:37:19.037Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 392544,
+    "fields": {
+      "System.Title": "[Menu] Botões com tamanhos despadronizados em mobile e tablet",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-03T14:35:13.403Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-08T14:47:09.577Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Testing"
+    }
+  },
+  {
+    "id": 392655,
+    "fields": {
+      "System.Title": "Erro de formatação | página sobre - estilo do texto perdeu a cor",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-05T13:05:38.81Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:48:01.923Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 393089,
+    "fields": {
+      "System.Title": "Componente \"Navegue por\"",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-09T14:10:01.483Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T13:59:35.193Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 393324,
+    "fields": {
+      "System.Title": "Iframe | Espaçamento quebrado",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-10T20:09:24.897Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-24T14:00:04.343Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 394108,
+    "fields": {
+      "System.Title": "Alinhamento horizontal no CKEditor",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-19T12:00:52.007Z",
+      "System.Tags": "Deploy 23-06-2026",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-06-23T12:22:47.177Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 394253,
+    "fields": {
+      "System.Title": "TabGroupComponent quebra layout",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-22T13:48:29.577Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:51:39.923Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 394533,
+    "fields": {
+      "System.Title": "[SEO] Dados estruturados em Páginas de Artigo",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-06-24T13:11:43.317Z",
+      "System.Tags": "Deploy 06-07-2026; MANUTENCAO",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:51:48.013Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 395696,
+    "fields": {
+      "System.Title": "Carrosséis Perderam Color Scheme quando Background é Escuro",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T13:06:32.547Z",
+      "System.Tags": "Deploy 06-07-2026",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-07-07T11:48:39.057Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 395697,
+    "fields": {
+      "System.Title": "Regressão CLS: fontes carregadas após o render, fora do next/font",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-06T13:06:41.557Z",
+      "System.Tags": "Deploy 03-08-2028",
+      "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-03T19:55:44.863Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 396085,
+    "fields": {
+      "System.Title": "Hover quebrado no componente \"CardGallery\"",
+      "System.WorkItemType": "Incident",
+      "System.State": "Done",
+      "System.CreatedDate": "2026-07-07T20:07:28.997Z",
+      "System.Tags": "Deploy 03-08-2028",
+      "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-03T19:57:09.217Z",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Lucas Gabriel da Silva"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 399923,
+    "fields": {
+      "System.Title": "[Portal] (BannerCarousel): arredondamento de bordas",
+      "System.WorkItemType": "Incident",
+      "System.State": "QA",
+      "System.CreatedDate": "2026-08-03T17:02:19.113Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
+    }
+  }
+]

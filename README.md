@@ -1,5 +1,123 @@
 # einstein-quality-metrics-poc
 
-POC dashboard for delivery quality metrics (DRE, CFR, MTTR, False Alarm) of the Einstein BR portal front-end team. Data extracted from the Azure DevOps board into versioned CSVs; static Next.js dashboard.
+POC dashboard for delivery-quality metrics of the Einstein BR Portal front end.
+Scope is the front repo as a whole — both the patients and medicos squads, one
+codebase. Four metrics — **DRE**, **CFR**, **MTTR**, **False Alarm** — extracted
+from the Azure DevOps board (org hiae, project `NOVO_EINSTEIN_BR`) into two
+versioned CSVs and rendered by a static Next.js app.
 
-Full design and decision history: docs/spec.md
+Full design and decision history: `docs/spec.md` (the substrate). Agent context
+index: `CLAUDE.md`.
+
+## Architecture
+
+```
+Azure board --(extract-board-metrics skill)--> data/*.csv --(fs at build)--> dashboard
+```
+
+Every metric materializes in the CSV dataset first. The presentation never
+computes a metric that is not already in the data layer.
+
+- `data/deploys.csv` — one row per `deploy-portal` deploy Enabler (DRE, CFR,
+  False Alarm).
+- `data/incidentes.csv` — one row per Incident (raw MTTR, right-censoring).
+- `src/lib/` — the computable data layer: `types.ts`, `csv.ts` (d3-dsv),
+  `metrics.ts` (per-deploy series), `transform.ts` (board JSON -> CSV rows),
+  `data.ts` (build-time CSV read boundary).
+- `team.yml` — the patients front-dev allowlist, the rescue branch of the
+  two-branch scope funnel (the other branch is the `Activity` board field).
+- `src/app/`, `src/components/`, `src/content/` — the presentation layer.
+
+## Commands
+
+| Purpose | Command |
+|---------|---------|
+| Dev server | `npm run dev` |
+| Static export build (`out/`) | `npm run build` |
+| Type check | `npm run check-types` |
+| Lint | `npm run lint` |
+| Lint fix | `npm run lint:fix` |
+| Tests | `npm run test:run` |
+| Coverage | `npm run test:coverage` |
+
+## The four metrics
+
+- **DRE** — `pre / (pre + post)` per deploy, by the hybrid rule (Incident = post;
+  Bug momento 0-5 = pre; Bug momento 6 = post, `furo-convencao`; Bug no momento =
+  pre, `dado-incompleto`).
+- **CFR** — cumulative since the first registered deploy: share of deploys with
+  at least one attributed Incident. The latest window is right-censored
+  (partial).
+- **MTTR** — `ClosedDate - CreatedDate` per Incident, split into "Crítico e
+  Alto" (Severity 1-2) vs "Médio e Baixo" (Severity 3-4), named by the board
+  label rather than the numeric code; open Incidents shown as "open for X days".
+- **False Alarm** — a single manual per-deploy number, appended via the
+  `register-false-alarm` skill.
+
+## Skills
+
+- `.claude/skills/extract-board-metrics/` — WIQL extraction from the board into
+  the two CSVs. `board-model.md` carries the scope funnel, tag rules, DRE hybrid
+  rule, Severity cut, and ready-made WIQL.
+- `.claude/skills/register-false-alarm/` — append-only writer for the
+  `false_alarms` column.
+
+## Manual seed procedure
+
+The unit tests validate the transform logic (`src/lib/transform.ts`) against
+board fixtures deterministically, in CI. The fixtures under `tests/__mocks__/`
+are a real `az boards query` response recorded on **2026-08-04**, slimmed to the
+SELECT columns (`System.AssignedTo` reduced to `displayName`, plus
+`System.AreaPath` and `Microsoft.VSTS.Common.Activity`). `az-window-findings.json`
+is the **unfiltered** root response (173 items, both areas), so the scope funnel
+runs in the test rather than being baked into the recording.
+
+Seeding the dataset from the **live** board is a manual step, run with a
+logged-in `az` CLI — it is not part of the automated test loop.
+
+1. **Log in and check the CLI.**
+
+   ```bash
+   az login
+   az version | grep -i azure-devops || az extension add --name azure-devops
+   az devops configure --defaults \
+     organization=https://dev.azure.com/hiae project=NOVO_EINSTEIN_BR
+   ```
+
+2. **Run the extraction.** Invoke the `extract-board-metrics` skill (it reads
+   `board-model.md`, runs the two WIQL queries, applies the two-branch scope
+   funnel — `Activity == 'Front End (BUG)'` **or** `AssignedTo` in `team.yml` —
+   computes DRE/CFR/MTTR, and writes `data/deploys.csv` + `data/incidentes.csv`,
+   preserving any `false_alarms` already registered).
+
+3. **Validate against the answer key** (merged scope, live 2026-08-04):
+
+   - **5** `deploy-portal` Enablers: 390722 (01/06), 394210 (23/06),
+     395747 (06/07), 397800 (21/07), 398412 (**03/08**).
+   - **173** Bug+Incident under the `NOVO_EINSTEIN_BR` root (both areas); **112**
+     are front (76 patients, 36 medicos), **16** land in `nao-classificado`.
+   - Front **Incidents = 28**, all patients-area; the 36 medicos front items are
+     all Bugs (zero Incidents).
+   - **CFR 4/5**: front Incidents per window are 390722 (6), 394210 (2),
+     395747 (3), 397800 (0), 398412 (1) — only 397800 is clean.
+   - DRE per window: 0.6, 0.8333, 0.8125, 1, 0.8571.
+   - MTTR "Crítico e Alto" (n=7): 0, 0, 1, 10, 13, 27, 34 days.
+   - MTTR "Médio e Baixo" (n=20): median **~12d**.
+   - Open Incident: 399923 (QA).
+   - Data-quality warnings: 395697 and 396085 carry the Tag B typo
+     `Deploy 03-08-2028` (2028 for 2026).
+
+   Any divergence is a data-quality signal to investigate on the board, not a
+   number to hand-edit into the CSV.
+
+4. **Register False Alarm numbers** per deploy with the `register-false-alarm`
+   skill as the dev triages each E2E round.
+
+5. **Build and review.** `npm run build` produces the static export in `out/`;
+   open it or run `npm run dev` for the dashboard.
+
+## Stack
+
+Next.js (`output: 'export'`, static), TypeScript ESM, Tailwind v4, Recharts,
+Biome, Vitest. Node 22 (`.nvmrc`). Conventions ported (adapted, not copied) from
+the `HIAE.EINSTEINBR.Front` reference project.

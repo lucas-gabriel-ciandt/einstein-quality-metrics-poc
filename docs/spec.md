@@ -463,6 +463,137 @@ The repo is born clean (`create-next-app` + `shadcn init`), without copying whol
 - Tailwind tokens: port the minimum needed (colors, typography, spacing in use), not the whole config.
 - Logos: copy `image55.png` (white CI&T) from the scratchpad into the repo before the session expires; Einstein from the front project's `public/images/`.
 
+## Pending backlog (added 2026-07-26, from the presentation planning)
+
+### P1. Team filter: pacientes / medicos / todos, defaulting to todos
+
+**Not a decision, a requirement.** One project, one repository, one deploy: both
+teams ship in the same Portal deploy, so a dashboard that can only see one team
+cannot answer "did this deploy break production". The team filter is a UI
+control; `todos` is the default and the honest view.
+
+**Implementation path, with the field reality verified on the board 2026-07-26.**
+
+Bugs. AreaPath separates the two teams cleanly:
+
+| Filter | Signal | Coverage |
+|--------|--------|----------|
+| pacientes | `[System.AreaPath] = 'NOVO_EINSTEIN_BR'` plus AssignedTo in the front dev list (`team.yml`) | AreaPath exact; AssignedTo is the front/back split within the team |
+| medicos | `[System.AreaPath] = 'NOVO_EINSTEIN_BR\MEDICOS_EMPRESAS'` plus `[Microsoft.VSTS.Common.Activity] = 'Front End (BUG)'` | 93% within standard since Apr 2026: 26 Front End (BUG) plus 25 Back End (BUG) of 55, zero off-standard values |
+| todos | no team predicate; front/back separation only | union of the two |
+
+The medicos branch works precisely because that squad fills Tipo de Atividade
+correctly (they have an embedded QA). Our side is at 45%, which is why the
+pacientes branch leans on AssignedTo instead.
+
+Incidents. **AreaPath does not separate them, and neither does Activity.**
+Verified: all 35 Incidents of 2026 sit at `NOVO_EINSTEIN_BR`. Activity on
+Incidents is 18 empty, 10 `TECNOLOGIA`, 5 `Front End (BUG)`, 1 `DEMANDA INTERNA`,
+1 `Testing`, so only 5 of 35 are within standard. The one signal that works is
+AssignedTo: Lucas 18, Samuel 7, Guilherme 5, Joao Carlos 2, Matheus Grigorio 2,
+Jonatas 1. That is 27 of 35 to the four patients-front devs, the remainder to
+back/CMS people. No Medicos front dev appears as an Incident assignee at all.
+
+**Consequence to surface in the UI, not to hide:** under `medicos` or `todos`,
+the bug-side numbers (DRE) are trustworthy, but the incident-side metrics (CFR
+numerator, MTTR) have no team dimension today. Either render them project-wide
+regardless of the filter, or label them as unfiltered. Do not fake a split the
+data does not support.
+
+`team.yml` also needs the Medicos front devs' Azure DevOps display names before
+`todos` is meaningful for the AssignedTo paths. Git shows ThaisOR, phmelosilva
+and Rodrigo Silva as active committers in the front repo since April 2026, with
+80 to 96 commits each; their board identities still have to be collected.
+
+Follow-up to raise in the board discussion: making Tipo de Atividade mandatory on
+Incidents at opening is what would actually close this gap.
+
+### P2. `Removed` bugs are being counted in DRE
+
+**Defect.** The WIQL in `.claude/skills/extract-board-metrics/board-model.md` has
+no state predicate, and `src/lib/transform.ts` reads `System.State` into the
+record without ever filtering on it. So bugs discarded from the backlog enter the
+extraction as pre-production findings and inflate DRE.
+
+Size of the effect in 2026: 35 of 121 bugs are `Removed`. Reasons are 33 "Removed
+from the backlog" and 2 "Moved out of state Resolved". Thirty of the 35 sit in
+`MEDICOS_EMPRESAS` and 34 of the 35 were opened by the QA. Under today's
+patients-only scope only 5 leak in, but **P1 makes this urgent**: with the `todos`
+filter all 35 enter.
+
+Recommendation: exclude `Removed` from the extraction. A bug that was thrown away
+is not a defect that was found, so it belongs in neither side of the DRE ratio.
+Keep `Done`, `Resolved`, `Committed` and `New`. If the count is wanted for
+auditing, carry it as a separate reported number, never inside the ratio.
+
+### P3. The first extraction was never run; the seed and the fixtures were invented
+
+**Resolved on 2026-07-27, recorded here because it explains the numbers moving.**
+
+The autonomous run never queried the board. It committed a `data/deploys.csv`
+whose `bugs_antes` / `incidentes_pos` / `false_alarms` were made up, and
+`tests/__mocks__/*.json` were hand-authored to match. The tells were uniform
+`09:00:00Z` CreatedDates across all five Enablers and Incident ids derived from
+their parent Enabler (`390722001`), which Azure DevOps never produces. The
+journal and README both claimed "recorded `az` fixtures", which was false.
+
+Because the fixtures were written to fit the code rather than the board, they
+hid a defect that a single real query surfaced immediately: `DEPLOY_DATE_PATTERN`
+was `/Deploy\s+(\d{2})-(\d{2})-(\d{4})/`, and **three of the five real deploy
+titles** (`[Portal] Deploy - 01/06/2026`, `Deploy - 23/06/2026`,
+`Deploy -06/07/2026`) threw `Deploy title without a DD-MM-YYYY date`. The
+extraction crashed on the live board while the suite was green. The spec had
+warned that titles vary; only the fixtures did not.
+
+Fixed: the pattern accepts both separators, the fixtures are a real recording of
+2026-07-27, `team.yml` now exists (it was referenced by `board-model.md` but had
+never been created), and the CSVs hold the extracted numbers.
+
+What moved, patients-front scope, 2026:
+
+| Deploy | DRE seeded (invented) | DRE 1a extracao | DRE apos correcao de momento |
+|--------|----------------------|-----------------|------------------------------|
+| 390722 | 0.6667 | 0.4 | 0.4 |
+| 394210 | 0.8889 | 0.5714 | 0.7143 |
+| 395747 | 0.7692 | 0.0 | 0.5 |
+| 397800 | 1.0 | 1.0 | 1.0 |
+
+The invented seed flattered DRE in every window. The third column is the
+2026-07-27 re-extraction after the dev corrected `momento` on four Bugs
+mislabelled `6 - Pos Go Live` (394833, 395759, 395836 and 395771), which is the
+`furo-convencao` case the hybrid rule exists to surface. Mean DRE over the closed
+windows moves from 0.4929 to 0.6536.
+
+Window 395747 (06/07) tops out at 0.5 and cannot reach 1.0: three Incidents
+(395696, 395697, 396085) are attributed to it, and an Incident is post-production
+by definition regardless of its momento.
+
+### P4. Momento correction exposes a contradiction in the window attribution
+
+**Open, not resolved.** Ordering the 06/07 window by creation time gives:
+13:06 two Incidents at `6 - Pos Go Live`, then 14:38, 16:10 and 19:00 three Bugs
+now at `0 - Teste na Sprint`. If the deploy had already shipped by 13:06, those
+three bugs were opened after go live and cannot be sprint-testing finds. Both
+readings cannot hold for the same deploy.
+
+The likely resolution is that `momento` is relative to the item's own cycle, not
+to this deploy: "Teste na Sprint" means found while testing the current sprint,
+whose work ships in the **next** deploy. If so, `board-model.md`'s attribution
+rule is inverted for pre-production findings. Today any finding created between
+deploy N and N+1 is attributed to N, which is right for an Incident (a failure of
+the deploy already in production) but wrong for a pre-production Bug, which is a
+defect caught before deploy **N+1**.
+
+Deciding this changes DRE in every window. Not acted on. CFR, MTTR "Crítico e Alto"
+(0, 0, 1, 10, 13, 34) and the three open Incidents all reproduce the answer key
+exactly. MTTR "Médio e Baixo" is n=18 with median 9d against the ~14d the manual
+mining estimated.
+
+Still open from this: there is no executable extraction runner. The
+`extract-board-metrics` skill describes the flow in prose, so an agent must
+hand-assemble the transform call each time. The 2026-07-27 run was done that
+way. A committed script would make the extraction repeatable and reviewable.
+
 ## Open questions
 
 1. Conversation with Laura (QA): script below.
@@ -489,13 +620,70 @@ About opening conventions (validate with whoever defined the standard):
 
 ## Scope Changes
 
-_None._
+### 2026-08-04 - Both teams' front by default (Option A: allowlist UNION field)
+
+**Decision (CONFIRMED by the dev):** the POC no longer measures the patients
+front alone. It measures the **front repo as a whole** — patients and medicos,
+one codebase, one Portal deploy. This resolves requirement P1 (`todos` as the
+honest default) and retires the patients-only funnel decided on 2026-07-23.
+
+**New scope funnel — two branches, OR'd (was 3 filters in sequence):**
+
+```
+front = (Microsoft.VSTS.Common.Activity == 'Front End (BUG)')   <- branch 1, field
+        OR (System.AssignedTo in team.yml frontDevs)            <- branch 2, allowlist
+```
+
+- **AreaPath is no longer a scope filter.** WIQL widens to
+  `[System.AreaPath] UNDER 'NOVO_EINSTEIN_BR'` (both areas in). AreaPath is kept
+  only for per-team reporting attribution, never to include/exclude.
+- **Branch 1 (the field) is the correct convention** and carries the whole front:
+  medicos come in exclusively through it (they fill it right, ~93% since Apr
+  2026), and the field-front patients come in too.
+- **Branch 2 (the allowlist) is a rescue** for the patients squad, which fills
+  the Activity field only ~1 in 3 times. `team.yml` keeps only the patients
+  front devs; `medicosFrontDevs` is retired (no allowlist needed for medicos).
+- **`nao-classificado`** is redefined: items that are unassigned AND not
+  field-front. Still surfaced with a count, never dropped.
+
+**Merged-scope reality, live 2026-08-04:** 173 Bug+Incident under the root ->
+112 front (76 patients, 36 medicos), 16 nao-classificado. 28 front Incidents,
+all patients-area; the 36 medicos front items are all Bugs, zero Incidents. DRE
+per window 0.6 / 0.8333 / 0.8125 / 1 / 0.8571 (the merge lifts DRE because
+medicos front is pre-heavy sprint catches with no Incidents). CFR 4/5.
+
+**Which field: `Microsoft.VSTS.Common.Activity`, UI label "Tipo de Atividade".**
+Verified live on 2026-08-04: this field carries the front/back marker on 94 of
+173 items (56 `Front End (BUG)` + 38 `Back End (BUG)`). Do NOT confuse it with
+`Custom.HIAE_TIPO_SERVICO` (UI label "Tipo de Serviço"), a look-alike field that
+is empty on 128 of 173 items and is not read by the extraction. Setting only
+"Tipo de Serviço" does nothing for the metrics.
+
+**Why filling the `Activity` field ("Tipo de Atividade") correctly matters —
+raise this with both squads.** The field (`Front End (BUG)` / `Back End (BUG)`)
+is the *only* board-native, dev-independent front/back classifier. Every item
+that carries it is measured correctly regardless of who is assigned or which
+area it sits in; every item that leaves it blank falls back on the fragile
+allowlist rescue (patients) or is silently invisible to the front scope if also
+unassigned. Concretely:
+
+- The patients squad's ~1-in-3 fill rate is the single largest source of
+  scope uncertainty in this POC. Bringing it to the medicos level (~93%) would
+  let branch 2 (the name allowlist, which breaks whenever the squad roster
+  changes) be dropped entirely.
+- Incidents are worse: only 5 of 35 carry the field. Making `Activity`
+  mandatory on Incidents at opening is the change that would give CFR and MTTR
+  a real per-team dimension (today they are patients-area by consequence, not
+  by design).
+
+The metric is only as honest as the field discipline behind it. This is a
+process ask on the board, not something the extraction can paper over.
 
 ## References
 
 - QA presentation: /home/lucas.gabriel/Documentos/apresentacao-qualidade/Qualidade.pdf (slide 6: Bug vs Incident opening standard; slides 16-18: organization dashboard)
 - Organization dashboard: "[AlbertEinstein] Quality Data Lab" (Looker Studio; screenshots in /home/lucas.gabriel/Documentos/dash-qualidade/; contact: Marcos Celeguim)
-- Example Enabler: 398412 "[Portal] Deploy 27-07-2026" (Sprint 48), children 398413-398416 (test Tasks), 398439/398498 (Bugs)
+- Example Enabler: 398412 "[Portal] Deploy 03-08-2026" (Sprint 48; the deploy slipped from 27/07 to 03/08), children 398413-398416 (test Tasks), 398439/398498 (Bugs)
 - Incident with an Enabler parent (exception): 381025 -> 380020
 - Raw mining data: session scratchpad (bugs2026.json, incident_ids.txt)
 - Skill: azdo-board-management (custom fields, root causes RC1-RC12)
