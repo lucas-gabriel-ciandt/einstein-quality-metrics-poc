@@ -11,7 +11,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:58:42.46Z",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -27,7 +28,8 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -43,7 +45,8 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -57,7 +60,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T11:48:48.123Z",
       "System.AssignedTo": {
         "displayName": "Joao Carlos Rodrigues Dias"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -72,7 +76,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T13:56:09.22Z",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -87,7 +92,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-30T14:04:14.247Z",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -102,7 +108,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-10T21:10:35.517Z",
       "System.AssignedTo": {
         "displayName": "Joao Carlos Rodrigues Dias"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -116,7 +123,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-11T15:21:48.483Z",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -130,7 +138,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-03-27T19:07:38.343Z",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -145,7 +154,8 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:41:03.35Z",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   },
   {
@@ -160,7 +170,9 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-04-09T13:33:13.24Z",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "DEMANDA INTERNA"
     }
   },
   {
@@ -175,7 +187,9 @@
       "Microsoft.VSTS.Common.ClosedDate": "2026-04-22T12:27:49.977Z",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
     }
   },
   {
@@ -191,7 +205,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
     }
   },
   {
@@ -207,7 +223,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
     }
   },
   {
@@ -222,7 +240,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
     }
   },
   {
@@ -238,7 +258,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Front End (BUG)"
     }
   },
   {
@@ -246,13 +268,16 @@
     "fields": {
       "System.Title": "Botão \"Saiba Mais\" do componente \"Galeria da Informação\" abaixo das setas",
       "System.WorkItemType": "Incident",
-      "System.State": "Committed",
+      "System.State": "Done",
       "System.CreatedDate": "2026-05-25T20:05:08.02Z",
       "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-04T11:37:19.037Z",
       "Custom.HIAE_MOMENTO_ABERTURA": "5 - Teste de Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -267,7 +292,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "Testing"
     }
   },
   {
@@ -283,7 +310,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -299,7 +328,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "0 - Teste na Sprint",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -315,7 +346,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -331,7 +364,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Samuel Soares da Rocha"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -347,7 +382,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -363,7 +400,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -379,7 +418,9 @@
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -387,13 +428,17 @@
     "fields": {
       "System.Title": "Regressão CLS: fontes carregadas após o render, fora do next/font",
       "System.WorkItemType": "Incident",
-      "System.State": "Waiting GM",
+      "System.State": "Done",
       "System.CreatedDate": "2026-07-06T13:06:41.557Z",
+      "System.Tags": "Deploy 03-08-2028",
       "Microsoft.VSTS.Common.Severity": "3 - Medium",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-03T19:55:44.863Z",
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
     }
   },
   {
@@ -401,13 +446,32 @@
     "fields": {
       "System.Title": "Hover quebrado no componente \"CardGallery\"",
       "System.WorkItemType": "Incident",
-      "System.State": "QA",
+      "System.State": "Done",
       "System.CreatedDate": "2026-07-07T20:07:28.997Z",
+      "System.Tags": "Deploy 03-08-2028",
       "Microsoft.VSTS.Common.Severity": "2 - High",
+      "Microsoft.VSTS.Common.ClosedDate": "2026-08-03T19:57:09.217Z",
       "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
       "System.AssignedTo": {
         "displayName": "Lucas Gabriel da Silva"
-      }
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR",
+      "Microsoft.VSTS.Common.Activity": "TECNOLOGIA"
+    }
+  },
+  {
+    "id": 399923,
+    "fields": {
+      "System.Title": "[Portal] (BannerCarousel): arredondamento de bordas",
+      "System.WorkItemType": "Incident",
+      "System.State": "QA",
+      "System.CreatedDate": "2026-08-03T17:02:19.113Z",
+      "Microsoft.VSTS.Common.Severity": "4 - Low",
+      "Custom.HIAE_MOMENTO_ABERTURA": "6 - Pós Go Live",
+      "System.AssignedTo": {
+        "displayName": "Samuel Soares da Rocha"
+      },
+      "System.AreaPath": "NOVO_EINSTEIN_BR"
     }
   }
 ]

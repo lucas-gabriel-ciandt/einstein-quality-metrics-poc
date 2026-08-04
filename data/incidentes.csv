@@ -15,7 +15,7 @@ id,titulo,severity,state,created,closed,deploy_tag,mttr_dias
 387413,[Portal] Corrigir exibição das setas de navegação do carrossel de serviços,3,Done,2026-05-05,2026-06-01,Deploy 01-06-2026,27
 388739,"Incidente de mensuração GTM no BannerGraphicsLess: CTA sem captura correta de categoria, label e link",3,Done,2026-05-13,2026-05-13,,0
 390613,Correção de Metatags Fora do <head>,2,Done,2026-05-22,2026-06-01,Deploy 01-06-2026,10
-390814,"Botão ""Saiba Mais"" do componente ""Galeria da Informação"" abaixo das setas",4,Committed,2026-05-25,,,
+390814,"Botão ""Saiba Mais"" do componente ""Galeria da Informação"" abaixo das setas",4,Done,2026-05-25,2026-08-04,,71
 392544,[Menu] Botões com tamanhos despadronizados em mobile e tablet,4,Done,2026-06-03,2026-06-08,,5
 392655,Erro de formatação | página sobre - estilo do texto perdeu a cor,4,Done,2026-06-05,2026-07-07,Deploy 06-07-2026,32
 393089,"Componente ""Navegue por""",3,Done,2026-06-09,2026-06-24,Deploy 23-06-2026,15
@@ -24,5 +24,6 @@ id,titulo,severity,state,created,closed,deploy_tag,mttr_dias
 394253,TabGroupComponent quebra layout,3,Done,2026-06-22,2026-07-07,Deploy 06-07-2026,15
 394533,[SEO] Dados estruturados em Páginas de Artigo,2,Done,2026-06-24,2026-07-07,Deploy 06-07-2026,13
 395696,Carrosséis Perderam Color Scheme quando Background é Escuro,3,Done,2026-07-06,2026-07-07,Deploy 06-07-2026,1
-395697,"Regressão CLS: fontes carregadas após o render, fora do next/font",3,Waiting GM,2026-07-06,,,
-396085,"Hover quebrado no componente ""CardGallery""",2,QA,2026-07-07,,,
+395697,"Regressão CLS: fontes carregadas após o render, fora do next/font",3,Done,2026-07-06,2026-08-03,Deploy 03-08-2028,28
+396085,"Hover quebrado no componente ""CardGallery""",2,Done,2026-07-07,2026-08-03,Deploy 03-08-2028,27
+399923,[Portal] (BannerCarousel): arredondamento de bordas,4,QA,2026-08-03,,,

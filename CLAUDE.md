@@ -8,10 +8,12 @@ definitions and decision history — it is the substrate for the whole project.
 
 ## Project Identity
 
-Static dashboard presenting four delivery-quality metrics for the patients
-team's front-end at the Einstein BR Portal: DRE, CFR, MTTR and False Alarm.
-Data is extracted from the Azure DevOps board (org hiae, project
+Static dashboard presenting four delivery-quality metrics for the Einstein BR
+Portal front-end (both squads, patients and medicos, one repo): DRE, CFR, MTTR
+and False Alarm. Data is extracted from the Azure DevOps board (org hiae, project
 NOVO_EINSTEIN_BR) into two versioned CSVs and rendered by a static Next.js app.
+Scope is the two-branch front funnel: `Activity == 'Front End (BUG)'` OR
+`AssignedTo` in `team.yml`.
 
 **Anti-requirement:** every metric materializes in the CSV dataset first. The
 presentation never computes a metric that is not already in the data layer.

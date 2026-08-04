@@ -1,10 +1,11 @@
 ---
 name: extract-board-metrics
 description: >-
-  Extract the patients-team front-end delivery-quality dataset from the Azure
-  DevOps board (org hiae, project NOVO_EINSTEIN_BR) into the two versioned CSVs
-  this POC renders: data/deploys.csv and data/incidentes.csv. Runs WIQL queries
-  via the az CLI, applies the 3-filter scope funnel, computes DRE/CFR/MTTR per
+  Extract the front-end delivery-quality dataset (both squads, patients and
+  medicos) from the Azure DevOps board (org hiae, project NOVO_EINSTEIN_BR) into
+  the two versioned CSVs this POC renders: data/deploys.csv and
+  data/incidentes.csv. Runs WIQL queries via the az CLI, applies the two-branch
+  front funnel (Activity field OR team.yml allowlist), computes DRE/CFR/MTTR per
   the spec rules, preserves the manually-registered false_alarms column, and
   validates Tag B against ClosedDate. Read board-model.md before querying.
 allowed-tools:
@@ -42,10 +43,12 @@ If the extension is missing, stop and tell the user to run
    `deploy-portal`. Each is one row of `data/deploys.csv`. The canonical deploy
    date is the `DD-MM-YYYY` in the `[Portal] Deploy DD-MM-YYYY` title, not the
    CreatedDate.
-3. **Query the findings** (Bugs + Incidents) in the patients-front scope, then
-   apply the 3-filter funnel from the board model (AreaPath root, then the
-   `team.yml`/front-dev AssignedTo allowlist, then the `nao-classificado` pile
-   for unassigned items). Nothing is dropped silently.
+3. **Query the findings** (Bugs + Incidents) `UNDER 'NOVO_EINSTEIN_BR'` (both
+   areas), then apply the two-branch front funnel from the board model: an item
+   is front when `Microsoft.VSTS.Common.Activity == 'Front End (BUG)'` OR its
+   `System.AssignedTo` is in the `team.yml` allowlist. Items that are unassigned
+   AND not field-front go to the `nao-classificado` pile. Nothing is dropped
+   silently.
 4. **Attribute and compute** using the same logic the dashboard consumes,
    `src/lib/transform.ts` (`buildDeploys`, `buildIncidents`):
    - Window attribution: an Incident/Bug whose CreatedDate falls between deploy

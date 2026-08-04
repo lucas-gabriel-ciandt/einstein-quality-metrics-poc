@@ -620,13 +620,63 @@ About opening conventions (validate with whoever defined the standard):
 
 ## Scope Changes
 
-_None._
+### 2026-08-04 - Both teams' front by default (Option A: allowlist UNION field)
+
+**Decision (CONFIRMED by the dev):** the POC no longer measures the patients
+front alone. It measures the **front repo as a whole** — patients and medicos,
+one codebase, one Portal deploy. This resolves requirement P1 (`todos` as the
+honest default) and retires the patients-only funnel decided on 2026-07-23.
+
+**New scope funnel — two branches, OR'd (was 3 filters in sequence):**
+
+```
+front = (Microsoft.VSTS.Common.Activity == 'Front End (BUG)')   <- branch 1, field
+        OR (System.AssignedTo in team.yml frontDevs)            <- branch 2, allowlist
+```
+
+- **AreaPath is no longer a scope filter.** WIQL widens to
+  `[System.AreaPath] UNDER 'NOVO_EINSTEIN_BR'` (both areas in). AreaPath is kept
+  only for per-team reporting attribution, never to include/exclude.
+- **Branch 1 (the field) is the correct convention** and carries the whole front:
+  medicos come in exclusively through it (they fill it right, ~93% since Apr
+  2026), and the field-front patients come in too.
+- **Branch 2 (the allowlist) is a rescue** for the patients squad, which fills
+  the Activity field only ~1 in 3 times. `team.yml` keeps only the patients
+  front devs; `medicosFrontDevs` is retired (no allowlist needed for medicos).
+- **`nao-classificado`** is redefined: items that are unassigned AND not
+  field-front. Still surfaced with a count, never dropped.
+
+**Merged-scope reality, live 2026-08-04:** 173 Bug+Incident under the root ->
+112 front (76 patients, 36 medicos), 16 nao-classificado. 28 front Incidents,
+all patients-area; the 36 medicos front items are all Bugs, zero Incidents. DRE
+per window 0.6 / 0.8333 / 0.8125 / 1 / 0.8571 (the merge lifts DRE because
+medicos front is pre-heavy sprint catches with no Incidents). CFR 4/5.
+
+**Why filling the `Activity` field ("Tipo de Servico") correctly matters —
+raise this with both squads.** The field (`Front End (BUG)` / `Back End (BUG)`)
+is the *only* board-native, dev-independent front/back classifier. Every item
+that carries it is measured correctly regardless of who is assigned or which
+area it sits in; every item that leaves it blank falls back on the fragile
+allowlist rescue (patients) or is silently invisible to the front scope if also
+unassigned. Concretely:
+
+- The patients squad's ~1-in-3 fill rate is the single largest source of
+  scope uncertainty in this POC. Bringing it to the medicos level (~93%) would
+  let branch 2 (the name allowlist, which breaks whenever the squad roster
+  changes) be dropped entirely.
+- Incidents are worse: only 5 of 35 carry the field. Making `Activity`
+  mandatory on Incidents at opening is the change that would give CFR and MTTR
+  a real per-team dimension (today they are patients-area by consequence, not
+  by design).
+
+The metric is only as honest as the field discipline behind it. This is a
+process ask on the board, not something the extraction can paper over.
 
 ## References
 
 - QA presentation: /home/lucas.gabriel/Documentos/apresentacao-qualidade/Qualidade.pdf (slide 6: Bug vs Incident opening standard; slides 16-18: organization dashboard)
 - Organization dashboard: "[AlbertEinstein] Quality Data Lab" (Looker Studio; screenshots in /home/lucas.gabriel/Documentos/dash-qualidade/; contact: Marcos Celeguim)
-- Example Enabler: 398412 "[Portal] Deploy 27-07-2026" (Sprint 48), children 398413-398416 (test Tasks), 398439/398498 (Bugs)
+- Example Enabler: 398412 "[Portal] Deploy 03-08-2026" (Sprint 48; the deploy slipped from 27/07 to 03/08), children 398413-398416 (test Tasks), 398439/398498 (Bugs)
 - Incident with an Enabler parent (exception): 381025 -> 380020
 - Raw mining data: session scratchpad (bugs2026.json, incident_ids.txt)
 - Skill: azdo-board-management (custom fields, root causes RC1-RC12)

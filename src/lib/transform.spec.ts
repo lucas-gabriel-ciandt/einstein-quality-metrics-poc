@@ -20,9 +20,13 @@ const rawEnablers = enablersFixture as RawWorkItem[];
 const rawIncidents = incidentsFixture as RawWorkItem[];
 const rawBoardFindings = findingsFixture as RawWorkItem[];
 
-// Scope funnel filter 2 ("front within patients"), mirroring team.yml. The
-// findings fixture is the unfiltered board response, so the funnel is exercised
-// here rather than baked into the recording.
+// Scope funnel, mirroring board-model.md / team.yml. The findings fixture is the
+// unfiltered board response for BOTH areas (patients + medicos), so the funnel
+// is exercised here rather than baked into the recording. Option A ("front in
+// general"): an item is front when its Activity field is 'Front End (BUG)' OR it
+// is assigned to a patients front dev. Patients fill the Activity field
+// unreliably, so the allowlist rescues them; medicos fill it correctly, so the
+// field brings their front in with no allowlist of their own.
 const FRONT_DEVS = new Set([
   'Lucas Gabriel da Silva',
   'Samuel Soares da Rocha',
@@ -37,9 +41,17 @@ function assignedTo(item: RawWorkItem): string {
   return raw?.displayName ?? '';
 }
 
-const rawFindings = rawBoardFindings.filter((item) =>
-  FRONT_DEVS.has(assignedTo(item)),
-);
+function activity(item: RawWorkItem): string {
+  return (item.fields['Microsoft.VSTS.Common.Activity'] as string) ?? '';
+}
+
+function isFront(item: RawWorkItem): boolean {
+  return (
+    FRONT_DEVS.has(assignedTo(item)) || activity(item) === 'Front End (BUG)'
+  );
+}
+
+const rawFindings = rawBoardFindings.filter(isFront);
 
 function incident(overrides: Partial<Incident>): Incident {
   return {
@@ -112,15 +124,15 @@ describe('extractDeployTag', () => {
 describe('parseDeployDate', () => {
   it('converts a DD-MM-YYYY title date into a YYYY-MM-DD date', () => {
     expect(parseDeployDate('[Portal] Deploy 01-06-2026')).toBe('2026-06-01');
-    expect(parseDeployDate('[Portal] Deploy 27-07-2026')).toBe('2026-07-27');
+    expect(parseDeployDate('[Portal] Deploy 03-08-2026')).toBe('2026-08-03');
   });
 
-  // The five real titles on the board are not uniform. A pattern that only
-  // accepts `Deploy DD-MM-YYYY` throws on three of them.
+  // The real titles on the board are not uniform. A pattern that only accepts
+  // `Deploy DD-MM-YYYY` throws on the slash-separated ones.
   it('accepts the slash and dash-separator title variants the board carries', () => {
     expect(parseDeployDate('[Portal] Deploy - 01/06/2026')).toBe('2026-06-01');
     expect(parseDeployDate('[Portal] Deploy - 23/06/2026')).toBe('2026-06-23');
-    expect(parseDeployDate('[Portal] Deploy -06/07/2026')).toBe('2026-07-06');
+    expect(parseDeployDate('[Portal] Deploy 06/07/2026')).toBe('2026-07-06');
     expect(parseDeployDate('[Portal] Deploy 21-07-2026')).toBe('2026-07-21');
   });
 
@@ -142,13 +154,27 @@ describe('toFinding', () => {
 });
 
 describe('scope funnel', () => {
-  it('keeps only findings assigned to a front dev and counts the unassigned pile', () => {
-    expect(rawBoardFindings).toHaveLength(100);
-    expect(rawFindings).toHaveLength(67);
-    const unassigned = rawBoardFindings.filter(
-      (item) => assignedTo(item) === '',
+  it('keeps front from both teams (allowlist or Activity field) and counts the nao-classificado pile', () => {
+    expect(rawBoardFindings).toHaveLength(173);
+    expect(rawFindings).toHaveLength(112);
+    // nao-classificado: unassigned AND not marked front by the Activity field.
+    const naoClassificado = rawBoardFindings.filter(
+      (item) => assignedTo(item) === '' && activity(item) !== 'Front End (BUG)',
     );
-    expect(unassigned).toHaveLength(7);
+    expect(naoClassificado).toHaveLength(16);
+  });
+
+  it('brings medicos front in through the Activity field, never the allowlist', () => {
+    const medicosFront = rawFindings.filter((item) =>
+      ((item.fields['System.AreaPath'] as string) ?? '').includes(
+        'MEDICOS_EMPRESAS',
+      ),
+    );
+    expect(medicosFront).toHaveLength(36);
+    for (const item of medicosFront) {
+      expect(activity(item)).toBe('Front End (BUG)');
+      expect(FRONT_DEVS.has(assignedTo(item))).toBe(false);
+    }
   });
 });
 
@@ -165,31 +191,27 @@ describe('buildIncidents', () => {
     );
   });
 
-  it('reproduces the spec "Crítico e Alto" MTTR series (0, 0, 1, 10, 13, 34 days)', () => {
+  it('reproduces the "Crítico e Alto" MTTR series (Sev 1-2)', () => {
     const sev12 = incidents
       .filter((i) => i.severity <= 2 && i.mttrDias !== null)
       .map((i) => i.mttrDias as number)
       .sort((a, b) => a - b);
-    expect(sev12).toEqual([0, 0, 1, 10, 13, 34]);
+    expect(sev12).toEqual([0, 0, 1, 10, 13, 27, 34]);
   });
 
-  it('reproduces the "Médio e Baixo" MTTR series (n=18)', () => {
+  it('reproduces the "Médio e Baixo" MTTR series (Sev 3-4)', () => {
     const sev34 = incidents
       .filter((i) => i.severity >= 3 && i.mttrDias !== null)
       .map((i) => i.mttrDias as number)
       .sort((a, b) => a - b);
     expect(sev34).toEqual([
-      0, 0, 0, 1, 2, 2, 4, 5, 8, 10, 14, 14, 15, 15, 21, 21, 27, 32,
+      0, 0, 0, 1, 2, 2, 4, 5, 8, 10, 14, 14, 15, 15, 21, 21, 27, 28, 32, 71,
     ]);
   });
 
   it('preserves open incidents with closed and mttrDias null', () => {
     const open = incidents.filter((i) => i.closed === null);
-    expect(open.map((i) => i.id).sort()).toEqual([
-      '390814',
-      '395697',
-      '396085',
-    ]);
+    expect(open.map((i) => i.id).sort()).toEqual(['399923']);
     for (const row of open) {
       expect(row.mttrDias).toBeNull();
     }
@@ -204,7 +226,7 @@ describe('buildIncidents', () => {
 
   it('extracts the Tag B deploy tag, and null when absent', () => {
     expect(byId(incidents).get('380017')?.deployTag).toBe('Deploy 30-03-2026');
-    expect(byId(incidents).get('390814')?.deployTag).toBeNull();
+    expect(byId(incidents).get('399923')?.deployTag).toBeNull();
   });
 });
 
@@ -224,7 +246,7 @@ describe('buildDeploys', () => {
       '2026-06-23',
       '2026-07-06',
       '2026-07-21',
-      '2026-07-27',
+      '2026-08-03',
     ]);
   });
 
@@ -236,11 +258,11 @@ describe('buildDeploys', () => {
 
   it('window-attributes findings and counts pre findings as bugsAntes', () => {
     const map = byEnablerId(deploys);
-    expect(map.get('390722')?.bugsAntes).toBe(4);
-    expect(map.get('394210')?.bugsAntes).toBe(5);
-    expect(map.get('395747')?.bugsAntes).toBe(3);
-    expect(map.get('397800')?.bugsAntes).toBe(3);
-    expect(map.get('398412')?.bugsAntes).toBe(0);
+    expect(map.get('390722')?.bugsAntes).toBe(9);
+    expect(map.get('394210')?.bugsAntes).toBe(10);
+    expect(map.get('395747')?.bugsAntes).toBe(13);
+    expect(map.get('397800')?.bugsAntes).toBe(8);
+    expect(map.get('398412')?.bugsAntes).toBe(6);
   });
 
   it('counts post findings (incidents and momento-6 bugs) as incidentesPos', () => {
@@ -249,22 +271,23 @@ describe('buildDeploys', () => {
     expect(map.get('394210')?.incidentesPos).toBe(2);
     expect(map.get('395747')?.incidentesPos).toBe(3);
     expect(map.get('397800')?.incidentesPos).toBe(0);
-    expect(map.get('398412')?.incidentesPos).toBe(0);
+    expect(map.get('398412')?.incidentesPos).toBe(1);
   });
 
   it('derives dre as pre/(pre+post) rounded to 4 decimals, null when empty', () => {
     const map = byEnablerId(deploys);
-    expect(map.get('390722')?.dre).toBe(0.4);
-    expect(map.get('394210')?.dre).toBe(0.7143);
-    expect(map.get('395747')?.dre).toBe(0.5);
+    expect(map.get('390722')?.dre).toBe(0.6);
+    expect(map.get('394210')?.dre).toBe(0.8333);
+    expect(map.get('395747')?.dre).toBe(0.8125);
     expect(map.get('397800')?.dre).toBe(1);
-    expect(map.get('398412')?.dre).toBeNull();
+    expect(map.get('398412')?.dre).toBe(0.8571);
   });
 
-  // Answer key (spec mining 2026-07-22/23): front Incidents per window are
-  // 6, 1, 3, 0, 0 -> CFR 3/4 over the closed windows.
+  // Merged scope (patients allowlist + both teams' Activity=Front End (BUG)):
+  // post findings per window are 6, 2, 3, 0, 1 -> CFR 4/5 over the windows that
+  // carry an Incident. Only 397800 (open, no incident yet) is clean.
   it('flags causouIncidente only for windows carrying an Incident work item', () => {
-    expect(deploys.map((d) => d.causouIncidente)).toEqual([1, 1, 1, 0, 0]);
+    expect(deploys.map((d) => d.causouIncidente)).toEqual([1, 1, 1, 0, 1]);
   });
 
   it('does not attribute findings created before the first deploy window', () => {
@@ -273,7 +296,7 @@ describe('buildDeploys', () => {
       0,
     );
     expect(attributed).toBeLessThan(rawFindings.length);
-    expect(attributed).toBe(26);
+    expect(attributed).toBe(58);
   });
 
   it('leaves falseAlarms null when no previous dataset is provided', () => {
@@ -295,22 +318,22 @@ describe('buildDeploys', () => {
         falseAlarms: 2,
       },
       {
-        enablerId: '395747',
-        data: '2026-07-06',
-        titulo: '[Portal] Deploy -06/07/2026',
+        enablerId: '398412',
+        data: '2026-08-03',
+        titulo: '[Portal] Deploy 03-08-2026',
         bugsAntes: 0,
         incidentesPos: 0,
         dre: null,
         causouIncidente: 0,
-        falseAlarms: 3,
+        falseAlarms: 12,
       },
     ];
     const map = byEnablerId(buildDeploys(rawEnablers, rawFindings, previous));
     expect(map.get('390722')?.falseAlarms).toBe(2);
-    expect(map.get('395747')?.falseAlarms).toBe(3);
+    expect(map.get('398412')?.falseAlarms).toBe(12);
     expect(map.get('394210')?.falseAlarms).toBeNull();
+    expect(map.get('395747')?.falseAlarms).toBeNull();
     expect(map.get('397800')?.falseAlarms).toBeNull();
-    expect(map.get('398412')?.falseAlarms).toBeNull();
   });
 });
 

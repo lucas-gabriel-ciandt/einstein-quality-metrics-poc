@@ -5,23 +5,34 @@ Distilled from `docs/spec.md`. The board (org hiae, project
 extraction reads. Board literals (tags, titles, field values) are kept in their
 original form — they are data, not prose.
 
-## Scope: the 3-filter funnel
+## Scope: front end of both teams
 
-The POC measures only the **patients team's front end**. Apply, in order:
+The POC measures the **front end of both teams** (patients + medicos) — one
+project, one front repository, one deploy pipeline. The scope is `front`, and an
+item is front when EITHER branch holds (Option A, "front in general"):
 
-1. **Patients team = Area Path.** One project, two areas. Root
-   `NOVO_EINSTEIN_BR` = patients; `NOVO_EINSTEIN_BR\MEDICOS_EMPRESAS` = medicos.
-   Filter exactly `[System.AreaPath] = 'NOVO_EINSTEIN_BR'`. No dependence on
-   tags or title prefixes.
-2. **Front within patients = AssignedTo.** An item counts as front when
-   assigned to a current front dev. 2026 list (versioned config, `team.yml`):
-   Lucas Gabriel da Silva, Samuel Soares da Rocha, Joao Carlos Rodrigues Dias,
-   Edilson Aparecido Rodrigues. A dev joining/leaving edits the file, not code.
-3. **Unassigned = `nao-classificado` pile.** Unassigned items are reported with
-   a count for manual triage, never dropped silently.
+1. **Field branch (both teams).** `[Microsoft.VSTS.Common.Activity] =
+   'Front End (BUG)'`. This is the board's own front/back marker (labelled
+   "Tipo de Serviço" on the form; its counterpart is `Back End (BUG)`). Medicos
+   fill it correctly, so it brings the whole medicos front in on its own.
+2. **Allowlist branch (patients rescue).** `[System.AssignedTo]` in the current
+   patients front-dev list (versioned config, `team.yml`): Lucas Gabriel da
+   Silva, Samuel Soares da Rocha, Joao Carlos Rodrigues Dias, Edilson Aparecido
+   Rodrigues. Patients fill the Activity field unreliably (only ~1 in 3 of their
+   real front items carries `Front End (BUG)`), so the allowlist rescues the
+   rest. A dev joining/leaving edits the file, not code.
 
-Discarded as filters: title prefix (89% of Bugs have none) and CreatedBy (the
-QA opens Bugs for both sides).
+`front = (Activity == 'Front End (BUG)') OR (AssignedTo in team.yml frontDevs)`.
+
+3. **Neither branch = `nao-classificado` pile.** Items that are unassigned AND
+   not field-tagged front are reported with a count for manual triage, never
+   dropped silently. There is NO medicos allowlist — medicos front rides the
+   Activity field, so a medicos front item with no assignee still counts.
+
+Area Path is no longer a scope filter (both `NOVO_EINSTEIN_BR` and
+`NOVO_EINSTEIN_BR\MEDICOS_EMPRESAS` are in scope); it is kept only to attribute
+an item to a team in reporting. Discarded as filters: title prefix (89% of Bugs
+have none) and CreatedBy (the QA opens Bugs for both sides).
 
 ## Tags: two natures, only one is ours
 
@@ -96,26 +107,40 @@ SELECT [System.Id], [System.Title], [System.WorkItemType], [System.State],
        [System.CreatedDate], [System.Tags],
        [Microsoft.VSTS.Common.Severity],
        [Microsoft.VSTS.Common.ClosedDate],
-       [Custom.HIAE_MOMENTO_ABERTURA], [System.AssignedTo]
+       [Custom.HIAE_MOMENTO_ABERTURA], [System.AssignedTo],
+       [System.AreaPath], [Microsoft.VSTS.Common.Activity]
 FROM WorkItems
 WHERE [System.TeamProject] = 'NOVO_EINSTEIN_BR'
-  AND [System.AreaPath] = 'NOVO_EINSTEIN_BR'
+  AND [System.AreaPath] UNDER 'NOVO_EINSTEIN_BR'
   AND [System.WorkItemType] IN ('Bug', 'Incident')
   AND [System.CreatedDate] >= '2026-01-01T00:00:00Z'
 ORDER BY [System.CreatedDate] ASC
 ```
 
-Apply the AssignedTo funnel (filter 2) and the `nao-classificado` count
-(filter 3) on the returned set.
+`UNDER` pulls both areas. Apply the two-branch front funnel
+(`Activity == 'Front End (BUG)'` OR AssignedTo in the allowlist) and the
+`nao-classificado` count on the returned set. `AreaPath` and `Activity` are in
+the SELECT so the funnel and the per-team reporting can read them.
 
-## Answer key (spec mining, 2026-07-22/23)
+## Answer key (merged scope, live 2026-08-04)
 
-Validate the live extraction against these:
+Validate the live extraction against these. Supersedes the patients-only spec
+mining of 2026-07-22/23 (which gave CFR 3/4 over four deploys); the numbers
+below are both teams' front and reflect the board as of 2026-08-04.
 
-- 5 `deploy-portal` Enablers; 35 Incidents at the root (2026).
-- Jun-Jul CFR = 3/4: 390722 (6 front Incidents, failed), 394210 (1, failed),
-  395747 (3, failed), 397800 (0, window open).
-- MTTR Sev 1-2 (n=6): 0, 0, 1, 10, 13, 34 days. Sev 3-4 (n=18): median ~14d.
-- Open Incidents preserved: 390814 (Committed), 395697 (Waiting GM),
-  396085 (QA).
-- Tag B vs ClosedDate: of 24 tagged Incidents, 18 closed same-day, 6 next-day.
+- 5 `deploy-portal` Enablers: 390722 (01/06), 394210 (23/06), 395747 (06/07),
+  397800 (21/07), 398412 (**03/08** — the last deploy slipped from 27/07).
+- Scope funnel: 173 Bug+Incident under the root (101 patients, 72 medicos) ->
+  **112 front** (76 patients via allowlist-or-field, 36 medicos via field),
+  16 `nao-classificado` (unassigned and not field-front).
+- Front Incidents: **28**. All are patients-area; medicos front is 36 items,
+  **all Bugs, zero Incidents**.
+- Post per window: 6, 2, 3, 0, 1 -> **CFR 4/5** (only 397800 is clean/open).
+- DRE per window: 0.6, 0.8333, 0.8125, 1, 0.8571. The merge lifts DRE because
+  medicos front is pre-heavy (mostly momento-1 sprint catches, no Incidents).
+- MTTR Sev 1-2 (n=7): 0, 0, 1, 10, 13, 27, 34 days. Sev 3-4 (n=20): median ~12d.
+- Open Incident: 399923 (QA). 390814, 395697, 396085 have since closed.
+- Momento quality: 0 front Bugs with an empty momento (no `dado-incompleto`),
+  1 with momento 6 (`furo-convencao`).
+- Data-quality warnings to surface (not rewrite): 395697 and 396085 carry Tag B
+  `Deploy 03-08-2028` (a 2028 typo for 2026) while closing on 2026-08-03.

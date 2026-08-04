@@ -1,7 +1,17 @@
-# Scope filter 2 of the extraction funnel: "front within patients".
-# An item counts as patients-front when its System.AssignedTo displayName is
-# listed here. A dev joining or leaving the squad edits this file, never code.
-# Names must match the Azure DevOps display name exactly (org hiae).
+# Allowlist branch of the two-branch front funnel (Option A).
+#
+# An item counts as front when EITHER:
+#   1. Microsoft.VSTS.Common.Activity == 'Front End (BUG)'  (board field,
+#      UI label "Tipo de Servico"), OR
+#   2. System.AssignedTo displayName is listed in `frontDevs` below.
+#
+# Branch 1 is the correct board convention and covers the whole front repo
+# (patients and medicos, one codebase). Branch 2 is a rescue: the patients
+# squad fills the Activity field unreliably (~1 in 3 items), so their front is
+# recovered by developer name. The medicos squad fills the field correctly and
+# needs no allowlist. A dev joining or leaving the patients squad edits this
+# file, never code. Names must match the Azure DevOps display name exactly
+# (org hiae).
 #
 # Referenced by .claude/skills/extract-board-metrics/board-model.md.
 
@@ -11,8 +21,6 @@ frontDevs:
   - Joao Carlos Rodrigues Dias
   - Edilson Aparecido Rodrigues
 
-# Medicos front devs are NOT listed yet: the `todos` / `medicos` team filter
-# (pending backlog P1 in docs/spec.md) needs their board display names, which
-# still have to be collected. Git shows ThaisOR, phmelosilva and Rodrigo Silva
-# as active committers in the front repo since April 2026.
-medicosFrontDevs: []
+# No medicos allowlist: medicos front is identified entirely by branch 1
+# (the Activity field). If the medicos squad ever regresses on filling the
+# field, add their display names here as a rescue, mirroring the patients row.
